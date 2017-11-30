@@ -4,9 +4,7 @@ test article
 
 哈哈哈
 
-
-
-\`\`\`js:test.js
+\`\`\`js
 
 const desc = "this is a test description."
 
