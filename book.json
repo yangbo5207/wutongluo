@@ -15,8 +15,8 @@
             "这波能反杀": "http://www.chengweiyang.cn"
         }
     },
-    "output": null,
-    "plugins": [ "codeblock-filename" ], 
+    "output": "doc",
+    "plugins": [ "codeblock-filename" ],
     "title": "Sample GitBook",
     "variables": {}
 }
