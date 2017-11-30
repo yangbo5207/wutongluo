@@ -4,9 +4,7 @@ test article
 
 哈哈哈
 
-\`\`\`js
 
-const desc = "this is a test description."
 
-\`\`\`
+
 
