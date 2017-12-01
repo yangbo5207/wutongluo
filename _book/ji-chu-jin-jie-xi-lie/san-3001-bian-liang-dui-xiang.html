@@ -1,0 +1,641 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>三、变量对象 · Sample GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="yangbo">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-codeblock-filename/block.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="si-3001-zuo-yong-yu-lian-yu-bi-bao.html" />
+    
+    
+    <link rel="prev" href="er-3001-zhi-xing-shang-xia-wen.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://www.chengweiyang.cn" target="_blank" class="custom-link">这波能反杀</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../ji-chu-jin-jie-xi-lie.html">
+            
+                <a href="../ji-chu-jin-jie-xi-lie.html">
+            
+                    
+                    基础进阶系列
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="yi-3001-nei-cun-kong-jian-xiang-jie.html">
+            
+                <a href="yi-3001-nei-cun-kong-jian-xiang-jie.html">
+            
+                    
+                    一、内存空间详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="er-3001-zhi-xing-shang-xia-wen.html">
+            
+                <a href="er-3001-zhi-xing-shang-xia-wen.html">
+            
+                    
+                    二、执行上下文
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.3" data-path="san-3001-bian-liang-dui-xiang.html">
+            
+                <a href="san-3001-bian-liang-dui-xiang.html">
+            
+                    
+                    三、变量对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="si-3001-zuo-yong-yu-lian-yu-bi-bao.html">
+            
+                <a href="si-3001-zuo-yong-yu-lian-yu-bi-bao.html">
+            
+                    
+                    四、作用域链与闭包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" >
+            
+                <span>
+            
+                    
+                    五、this
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="liu-3001-zai-chrome-zhong-guan-cha-han-shu-diao-yong-zhan-3001-zuo-yong-yu-lian-3001-bi-bao.html">
+            
+                <a href="liu-3001-zai-chrome-zhong-guan-cha-han-shu-diao-yong-zhan-3001-zuo-yong-yu-lian-3001-bi-bao.html">
+            
+                    
+                    六、在chrome中观察函数调用栈、作用域链、闭包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="qi-3001-han-shu-yu-han-shu-shi-bian-cheng.html">
+            
+                <a href="qi-3001-han-shu-yu-han-shu-shi-bian-cheng.html">
+            
+                    
+                    七、函数与函数式编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="ba-3001-ke-li-hua.html">
+            
+                <a href="ba-3001-ke-li-hua.html">
+            
+                    
+                    八、柯里化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="jiu-3001-mian-xiang-dui-xiang.html">
+            
+                <a href="jiu-3001-mian-xiang-dui-xiang.html">
+            
+                    
+                    九、面向对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="shi-3001-mian-xiang-dui-xiang-shi-zhan-zhi-tuo-ye-dui-xiang-feng-zhuang.html">
+            
+                <a href="shi-3001-mian-xiang-dui-xiang-shi-zhan-zhi-tuo-ye-dui-xiang-feng-zhuang.html">
+            
+                    
+                    十、面向对象实战之拖拽对象封装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="shi-yi-3001-qian-xi-jquery.html">
+            
+                <a href="shi-yi-3001-qian-xi-jquery.html">
+            
+                    
+                    十一、浅析jQuery
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="shi-er-3001-shi-jian-xun-huan-ji-zhi.html">
+            
+                <a href="shi-er-3001-shi-jian-xun-huan-ji-zhi.html">
+            
+                    
+                    十二、事件循环机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" data-path="shi-san-3001-promise.html">
+            
+                <a href="shi-san-3001-promise.html">
+            
+                    
+                    十三、Promise
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" data-path="shi-si-3001-es6-chang-yong-zhi-shi-he-ji.html">
+            
+                <a href="shi-si-3001-es6-chang-yong-zhi-shi-he-ji.html">
+            
+                    
+                    十四、ES6常用知识合集
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.15" data-path="shi-wu-3001-xiang-jie-es6-modules.html">
+            
+                <a href="shi-wu-3001-xiang-jie-es6-modules.html">
+            
+                    
+                    十五、详解ES6 Modules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.16" data-path="fu-jian-1-settimeout-yu-bi-bao.html">
+            
+                <a href="fu-jian-1-settimeout-yu-bi-bao.html">
+            
+                    
+                    附件1：setTimeout与闭包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.17" data-path="fu-jian-2-async-await.html">
+            
+                <a href="fu-jian-2-async-await.html">
+            
+                    
+                    附件2：async/await
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >三、变量对象</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p><img src="http://upload-images.jianshu.io/upload_images/599584-ab88faf1cbf625b6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>&#x5F00;&#x5E74;&#x4E4B;&#x540E;&#x5DE5;&#x4F5C;&#x70ED;&#x60C5;&#x4E00;&#x76F4;&#x4E0D;&#x662F;&#x5F88;&#x9AD8;&#xFF0C;&#x8FD9;&#x51E0;&#x5929;&#x4E00;&#x76F4;&#x5904;&#x4E8E;&#x6D88;&#x6781;&#x6020;&#x5DE5;&#x72B6;&#x6001;&#x3002;&#x65E9;&#x4E0A;&#x4E0D;&#x60F3;&#x8D77;&#x5E8A;&#xFF0C;&#x8D77;&#x5E8A;&#x4E86;&#x4E0D;&#x60F3;&#x4E0A;&#x73ED;&#x3002;&#x660E;&#x660E;&#x653E;&#x5047;&#x4E4B;&#x524D;&#x5DE5;&#x4F5C;&#x70ED;&#x60C5;&#x8FD8;&#x4E00;&#x76F4;&#x5F88;&#x9AD8;&#xFF0C;&#x4E00;&#x76F4;&#x5FC3;&#x5FC3;&#x5FF5;&#x5FF5;&#x7684;&#x60F3;&#x628A;&#x5C0F;&#x7A0B;&#x5E8F;&#x9879;&#x76EE;&#x603C;&#x51FA;&#x6765;&#xFF0C;&#x7ED3;&#x679C;&#x4F11;&#x5047;&#x56DE;&#x6765;&#x4E4B;&#x540E;&#x753B;&#x98CE;&#x5B8C;&#x5168;&#x4E0D;&#x4E00;&#x6837;&#x4E86;&#x3002;&#x6211;&#x611F;&#x89C9;&#x81EA;&#x5DF1;&#x5F97;&#x4E86;&#x4E25;&#x91CD;&#x4E86;&#x8282;&#x540E;&#x7EFC;&#x5408;&#x5F81;&#x3002;&#x8FD8;&#x597D;&#x64B8;&#x4E86;&#x51E0;&#x7BC7;&#x6587;&#x7AE0;&#xFF0C;&#x52C9;&#x5F3A;&#x8868;&#x793A;&#x8FD9;&#x4E00;&#x5468;&#x7684;&#x65F6;&#x95F4;&#x6CA1;&#x6709;&#x5B8C;&#x5168;&#x6D6A;&#x8D39;&#x3002;&#x8FD9;&#x7BC7;&#x6587;&#x7AE0;&#x8981;&#x7ED9;&#x5927;&#x5BB6;&#x4ECB;&#x7ECD;&#x7684;&#x662F;&#x53D8;&#x91CF;&#x5BF9;&#x8C61;&#x3002;</p>
+<p>&#x5728;JavaScript&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x80AF;&#x5B9A;&#x4E0D;&#x53EF;&#x907F;&#x514D;&#x7684;&#x9700;&#x8981;&#x58F0;&#x660E;&#x53D8;&#x91CF;&#x548C;&#x51FD;&#x6570;&#xFF0C;&#x53EF;&#x662F;JS&#x89E3;&#x6790;&#x5668;&#x662F;&#x5982;&#x4F55;&#x627E;&#x5230;&#x8FD9;&#x4E9B;&#x53D8;&#x91CF;&#x7684;&#x5462;&#xFF1F;&#x6211;&#x4EEC;&#x8FD8;&#x5F97;&#x5BF9;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#x6709;&#x4E00;&#x4E2A;&#x8FDB;&#x4E00;&#x6B65;&#x7684;&#x4E86;&#x89E3;&#x3002;</p>
+<p>&#x5728;&#x4E0A;&#x4E00;&#x7BC7;&#x6587;&#x7AE0;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x77E5;&#x9053;&#xFF0C;&#x5F53;&#x8C03;&#x7528;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x65F6;&#xFF08;&#x6FC0;&#x6D3B;&#xFF09;&#xFF0C;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#x5C31;&#x4F1A;&#x88AB;&#x521B;&#x5EFA;&#x3002;&#x800C;&#x4E00;&#x4E2A;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x53EF;&#x4EE5;&#x5206;&#x4E3A;&#x4E24;&#x4E2A;&#x9636;&#x6BB5;&#x3002;</p>
+<ul>
+<li><p><strong>&#x521B;&#x5EFA;&#x9636;&#x6BB5;</strong>
+&#x5728;&#x8FD9;&#x4E2A;&#x9636;&#x6BB5;&#x4E2D;&#xFF0C;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#x4F1A;&#x5206;&#x522B;&#x521B;&#x5EFA;&#x53D8;&#x91CF;&#x5BF9;&#x8C61;&#xFF0C;&#x5EFA;&#x7ACB;&#x4F5C;&#x7528;&#x57DF;&#x94FE;&#xFF0C;&#x4EE5;&#x53CA;&#x786E;&#x5B9A;this&#x7684;&#x6307;&#x5411;&#x3002;</p>
+</li>
+<li><p><strong>&#x4EE3;&#x7801;&#x6267;&#x884C;&#x9636;&#x6BB5;</strong>
+&#x521B;&#x5EFA;&#x5B8C;&#x6210;&#x4E4B;&#x540E;&#xFF0C;&#x5C31;&#x4F1A;&#x5F00;&#x59CB;&#x6267;&#x884C;&#x4EE3;&#x7801;&#xFF0C;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#xFF0C;&#x4F1A;&#x5B8C;&#x6210;&#x53D8;&#x91CF;&#x8D4B;&#x503C;&#xFF0C;&#x51FD;&#x6570;&#x5F15;&#x7528;&#xFF0C;&#x4EE5;&#x53CA;&#x6267;&#x884C;&#x5176;&#x4ED6;&#x4EE3;&#x7801;&#x3002;</p>
+</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/599584-391af3aad043c028.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#x751F;&#x547D;&#x5468;&#x671F;"></p>
+<p>&#x4ECE;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#x8BE6;&#x7EC6;&#x4E86;&#x89E3;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#x6781;&#x4E3A;&#x91CD;&#x8981;&#xFF0C;&#x56E0;&#x4E3A;&#x5176;&#x4E2D;&#x6D89;&#x53CA;&#x5230;&#x4E86;&#x53D8;&#x91CF;&#x5BF9;&#x8C61;&#xFF0C;&#x4F5C;&#x7528;&#x57DF;&#x94FE;&#xFF0C;this&#x7B49;&#x5F88;&#x591A;&#x4EBA;&#x6CA1;&#x6709;&#x600E;&#x4E48;&#x5F04;&#x660E;&#x767D;&#xFF0C;&#x4F46;&#x662F;&#x5374;&#x6781;&#x4E3A;&#x91CD;&#x8981;&#x7684;&#x6982;&#x5FF5;&#xFF0C;&#x5B83;&#x5173;&#x7CFB;&#x5230;&#x6211;&#x4EEC;&#x80FD;&#x4E0D;&#x80FD;&#x771F;&#x6B63;&#x7406;&#x89E3;JavaScript&#x3002;&#x5728;&#x540E;&#x9762;&#x7684;&#x6587;&#x7AE0;&#x4E2D;&#x6211;&#x4EEC;&#x4F1A;&#x4E00;&#x4E00;&#x8BE6;&#x7EC6;&#x603B;&#x7ED3;&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x5148;&#x91CD;&#x70B9;&#x4E86;&#x89E3;&#x53D8;&#x91CF;&#x5BF9;&#x8C61;&#x3002;</p>
+<h5 id="&#x53D8;&#x91CF;&#x5BF9;&#x8C61;&#xFF08;variable-object&#xFF09;">&#x53D8;&#x91CF;&#x5BF9;&#x8C61;&#xFF08;Variable Object&#xFF09;</h5>
+<p>&#x53D8;&#x91CF;&#x5BF9;&#x8C61;&#x7684;&#x521B;&#x5EFA;&#xFF0C;&#x4F9D;&#x6B21;&#x7ECF;&#x5386;&#x4E86;&#x4EE5;&#x4E0B;&#x51E0;&#x4E2A;&#x8FC7;&#x7A0B;&#x3002;</p>
+<ol>
+<li><p>&#x5EFA;&#x7ACB;arguments&#x5BF9;&#x8C61;&#x3002;&#x68C0;&#x67E5;&#x5F53;&#x524D;&#x4E0A;&#x4E0B;&#x6587;&#x4E2D;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x5EFA;&#x7ACB;&#x8BE5;&#x5BF9;&#x8C61;&#x4E0B;&#x7684;&#x5C5E;&#x6027;&#x4E0E;&#x5C5E;&#x6027;&#x503C;&#x3002;</p>
+</li>
+<li><p>&#x68C0;&#x67E5;&#x5F53;&#x524D;&#x4E0A;&#x4E0B;&#x6587;&#x7684;&#x51FD;&#x6570;&#x58F0;&#x660E;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x4F7F;&#x7528;function&#x5173;&#x952E;&#x5B57;&#x58F0;&#x660E;&#x7684;&#x51FD;&#x6570;&#x3002;&#x5728;&#x53D8;&#x91CF;&#x5BF9;&#x8C61;&#x4E2D;&#x4EE5;&#x51FD;&#x6570;&#x540D;&#x5EFA;&#x7ACB;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x5C5E;&#x6027;&#x503C;&#x4E3A;&#x6307;&#x5411;&#x8BE5;&#x51FD;&#x6570;&#x6240;&#x5728;&#x5185;&#x5B58;&#x5730;&#x5740;&#x7684;&#x5F15;&#x7528;&#x3002;&#x5982;&#x679C;&#x51FD;&#x6570;&#x540D;&#x7684;&#x5C5E;&#x6027;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#xFF0C;&#x90A3;&#x4E48;&#x8BE5;&#x5C5E;&#x6027;&#x5C06;&#x4F1A;&#x88AB;&#x65B0;&#x7684;&#x5F15;&#x7528;&#x6240;&#x8986;&#x76D6;&#x3002;</p>
+</li>
+<li><p>&#x68C0;&#x67E5;&#x5F53;&#x524D;&#x4E0A;&#x4E0B;&#x6587;&#x4E2D;&#x7684;&#x53D8;&#x91CF;&#x58F0;&#x660E;&#xFF0C;&#x6BCF;&#x627E;&#x5230;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x58F0;&#x660E;&#xFF0C;&#x5C31;&#x5728;&#x53D8;&#x91CF;&#x5BF9;&#x8C61;&#x4E2D;&#x4EE5;&#x53D8;&#x91CF;&#x540D;&#x5EFA;&#x7ACB;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x5C5E;&#x6027;&#x503C;&#x4E3A;undefined&#x3002;&#x5982;&#x679C;&#x8BE5;&#x53D8;&#x91CF;&#x540D;&#x7684;&#x5C5E;&#x6027;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#xFF0C;&#x4E3A;&#x4E86;&#x9632;&#x6B62;&#x540C;&#x540D;&#x7684;&#x51FD;&#x6570;&#x88AB;&#x4FEE;&#x6539;&#x4E3A;undefined&#xFF0C;&#x5219;&#x4F1A;&#x76F4;&#x63A5;&#x8DF3;&#x8FC7;&#xFF0C;&#x539F;&#x5C5E;&#x6027;&#x503C;&#x4E0D;&#x4F1A;&#x88AB;&#x4FEE;&#x6539;&#x3002;</p>
+</li>
+</ol>
+<p>&#x8BB8;&#x591A;&#x8BFB;&#x8005;&#x5728;&#x9605;&#x8BFB;&#x5230;&#x8FD9;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x56E0;&#x4E3A;&#x4E0B;&#x9762;&#x7684;&#x8FD9;&#x6837;&#x573A;&#x666F;&#x5BF9;&#x4E8E;&#x201C;&#x8DF3;&#x8FC7;&#x201D;&#x4E00;&#x8BCD;&#x4EA7;&#x751F;&#x7591;&#x95EE;&#x3002;&#x65E2;&#x7136;&#x53D8;&#x91CF;&#x58F0;&#x660E;&#x7684;foo&#x9047;&#x5230;&#x51FD;&#x6570;&#x58F0;&#x660E;&#x7684;foo&#x4F1A;&#x8DF3;&#x8FC7;&#xFF0C;&#x53EF;&#x662F;&#x4E3A;&#x4EC0;&#x4E48;&#x6700;&#x540E;foo&#x7684;&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x4ECD;&#x7136;&#x662F;&#x88AB;&#x8986;&#x76D6;&#x4E86;&#xFF1F;</p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{ <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;function foo&apos;</span>) }
+<span class="hljs-keyword">var</span> foo = <span class="hljs-number">20</span>;
+
+<span class="hljs-built_in">console</span>.log(foo); <span class="hljs-comment">// 20</span>
+</code></pre>
+<p>&#x5176;&#x5B9E;&#x53EA;&#x662F;&#x5927;&#x5BB6;&#x5728;&#x9605;&#x8BFB;&#x7684;&#x65F6;&#x5019;&#x4E0D;&#x591F;&#x4ED4;&#x7EC6;&#xFF0C;&#x56E0;&#x4E3A;&#x4E0A;&#x9762;&#x7684;&#x4E09;&#x6761;&#x89C4;&#x5219;&#x4EC5;&#x4EC5;&#x9002;&#x7528;&#x4E8E;&#x53D8;&#x91CF;&#x5BF9;&#x8C61;&#x7684;&#x521B;&#x5EFA;&#x8FC7;&#x7A0B;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#x7684;&#x521B;&#x5EFA;&#x8FC7;&#x7A0B;&#x3002;&#x800C;<code>foo = 20</code>&#x662F;&#x5728;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#x7684;&#x6267;&#x884C;&#x8FC7;&#x7A0B;&#x4E2D;&#x8FD0;&#x884C;&#x7684;&#xFF0C;&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x81EA;&#x7136;&#x4F1A;&#x662F;20&#x3002;&#x5BF9;&#x6BD4;&#x4E0B;&#x4F8B;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-built_in">console</span>.log(foo); <span class="hljs-comment">// function foo</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{ <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;function foo&apos;</span>) }
+<span class="hljs-keyword">var</span> foo = <span class="hljs-number">20</span>;
+</code></pre>
+<pre><code class="lang-javascript"><span class="hljs-comment">// &#x4E0A;&#x6817;&#x7684;&#x6267;&#x884C;&#x987A;&#x5E8F;&#x4E3A;</span>
+
+<span class="hljs-comment">// &#x9996;&#x5148;&#x5C06;&#x6240;&#x6709;&#x51FD;&#x6570;&#x58F0;&#x660E;&#x653E;&#x5165;&#x53D8;&#x91CF;&#x5BF9;&#x8C61;&#x4E2D;</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{ <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;function foo&apos;</span>) }
+
+<span class="hljs-comment">// &#x5176;&#x6B21;&#x5C06;&#x6240;&#x6709;&#x53D8;&#x91CF;&#x58F0;&#x660E;&#x653E;&#x5165;&#x53D8;&#x91CF;&#x5BF9;&#x8C61;&#x4E2D;&#xFF0C;&#x4F46;&#x662F;&#x56E0;&#x4E3A;foo&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x540C;&#x540D;&#x51FD;&#x6570;&#xFF0C;&#x56E0;&#x6B64;&#x6B64;&#x65F6;&#x4F1A;&#x8DF3;&#x8FC7;undefined&#x7684;&#x8D4B;&#x503C;</span>
+<span class="hljs-comment">// var foo = undefined;</span>
+
+<span class="hljs-comment">// &#x7136;&#x540E;&#x5F00;&#x59CB;&#x6267;&#x884C;&#x9636;&#x6BB5;&#x4EE3;&#x7801;&#x7684;&#x6267;&#x884C;</span>
+<span class="hljs-built_in">console</span>.log(foo); <span class="hljs-comment">// function foo</span>
+foo = <span class="hljs-number">20</span>;
+</code></pre>
+<p><img src="http://upload-images.jianshu.io/upload_images/599584-7d131cfe82a20d37.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="&#x6211;&#x77E5;&#x9053;&#x6709;&#x7684;&#x4EBA;&#x4E0D;&#x559C;&#x6B22;&#x770B;&#x6587;&#x5B57;"></p>
+<p>&#x6839;&#x636E;&#x8FD9;&#x4E2A;&#x89C4;&#x5219;&#xFF0C;&#x7406;&#x89E3;&#x53D8;&#x91CF;&#x63D0;&#x5347;&#x5C31;&#x53D8;&#x5F97;&#x5341;&#x5206;&#x7B80;&#x5355;&#x4E86;&#x3002;&#x5728;&#x5F88;&#x591A;&#x6587;&#x7AE0;&#x4E2D;&#x867D;&#x7136;&#x63D0;&#x5230;&#x4E86;&#x53D8;&#x91CF;&#x63D0;&#x5347;&#xFF0C;&#x4F46;&#x662F;&#x5177;&#x4F53;&#x662F;&#x600E;&#x4E48;&#x56DE;&#x4E8B;&#x8FD8;&#x771F;&#x7684;&#x5F88;&#x591A;&#x4EBA;&#x90FD;&#x8BF4;&#x4E0D;&#x51FA;&#x6765;&#xFF0C;&#x4EE5;&#x540E;&#x5728;&#x9762;&#x8BD5;&#x4E2D;&#x7528;&#x53D8;&#x91CF;&#x5BF9;&#x8C61;&#x7684;&#x521B;&#x5EFA;&#x8FC7;&#x7A0B;&#x8DDF;&#x9762;&#x8BD5;&#x5B98;&#x89E3;&#x91CA;&#x53D8;&#x91CF;&#x63D0;&#x5347;&#xFF0C;&#x4FDD;&#x8BC1;&#x77AC;&#x95F4;&#x63D0;&#x5347;&#x903C;&#x683C;&#x3002;</p>
+<p>&#x5728;&#x4E0A;&#x9762;&#x7684;&#x89C4;&#x5219;&#x4E2D;&#x6211;&#x4EEC;&#x770B;&#x51FA;&#xFF0C;function&#x58F0;&#x660E;&#x4F1A;&#x6BD4;var&#x58F0;&#x660E;&#x4F18;&#x5148;&#x7EA7;&#x66F4;&#x9AD8;&#x4E00;&#x70B9;&#x3002;&#x4E3A;&#x4E86;&#x5E2E;&#x52A9;&#x5927;&#x5BB6;&#x66F4;&#x597D;&#x7684;&#x7406;&#x89E3;&#x53D8;&#x91CF;&#x5BF9;&#x8C61;&#xFF0C;&#x6211;&#x4EEC;&#x7ED3;&#x5408;&#x4E00;&#x4E9B;&#x7B80;&#x5355;&#x7684;&#x4F8B;&#x5B50;&#x6765;&#x8FDB;&#x884C;&#x63A2;&#x8BA8;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// demo01</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">test</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-built_in">console</span>.log(a);
+    <span class="hljs-built_in">console</span>.log(foo());
+
+    <span class="hljs-keyword">var</span> a = <span class="hljs-number">1</span>;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-number">2</span>;
+    }
+}
+
+test();
+</code></pre>
+<p>&#x5728;&#x4E0A;&#x4F8B;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x76F4;&#x63A5;&#x4ECE;test()&#x7684;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#x5F00;&#x59CB;&#x7406;&#x89E3;&#x3002;&#x5168;&#x5C40;&#x4F5C;&#x7528;&#x57DF;&#x4E2D;&#x8FD0;&#x884C;<code>test()</code>&#x65F6;&#xFF0C;test()&#x7684;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#x5F00;&#x59CB;&#x521B;&#x5EFA;&#x3002;&#x4E3A;&#x4E86;&#x4FBF;&#x4E8E;&#x7406;&#x89E3;&#xFF0C;&#x6211;&#x4EEC;&#x7528;&#x5982;&#x4E0B;&#x7684;&#x5F62;&#x5F0F;&#x6765;&#x8868;&#x793A;</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// &#x521B;&#x5EFA;&#x8FC7;&#x7A0B;</span>
+testEC = {
+    <span class="hljs-comment">// &#x53D8;&#x91CF;&#x5BF9;&#x8C61;</span>
+    VO: {},
+    scopeChain: {}
+}
+
+<span class="hljs-comment">// &#x56E0;&#x4E3A;&#x672C;&#x6587;&#x6682;&#x65F6;&#x4E0D;&#x8BE6;&#x7EC6;&#x89E3;&#x91CA;&#x4F5C;&#x7528;&#x57DF;&#x94FE;&#xFF0C;&#x6240;&#x4EE5;&#x628A;&#x53D8;&#x91CF;&#x5BF9;&#x8C61;&#x4E13;&#x95E8;&#x63D0;&#x51FA;&#x6765;&#x8BF4;&#x660E;</span>
+
+<span class="hljs-comment">// VO &#x4E3A; Variable Object&#x7684;&#x7F29;&#x5199;&#xFF0C;&#x5373;&#x53D8;&#x91CF;&#x5BF9;&#x8C61;</span>
+VO = {
+    <span class="hljs-built_in">arguments</span>: {...},  <span class="hljs-comment">//&#x6CE8;&#xFF1A;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x5C55;&#x793A;&#x4E2D;&#xFF0C;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x53EF;&#x80FD;&#x5E76;&#x4E0D;&#x662F;&#x653E;&#x5728;arguments&#x5BF9;&#x8C61;&#x4E2D;&#xFF0C;&#x8FD9;&#x91CC;&#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#x7406;&#x89E3;&#xFF0C;&#x6211;&#x505A;&#x4E86;&#x8FD9;&#x6837;&#x7684;&#x5904;&#x7406;</span>
+    foo: <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">foo</span> <span class="hljs-attr">reference</span>&gt;</span>  // &#x8868;&#x793A;foo&#x7684;&#x5730;&#x5740;&#x5F15;&#x7528;
+    a: undefined
+}
+</span></code></pre>
+<p>&#x672A;&#x8FDB;&#x5165;&#x6267;&#x884C;&#x9636;&#x6BB5;&#x4E4B;&#x524D;&#xFF0C;&#x53D8;&#x91CF;&#x5BF9;&#x8C61;&#x4E2D;&#x7684;&#x5C5E;&#x6027;&#x90FD;&#x4E0D;&#x80FD;&#x8BBF;&#x95EE;&#xFF01;&#x4F46;&#x662F;&#x8FDB;&#x5165;&#x6267;&#x884C;&#x9636;&#x6BB5;&#x4E4B;&#x540E;&#xFF0C;&#x53D8;&#x91CF;&#x5BF9;&#x8C61;&#x8F6C;&#x53D8;&#x4E3A;&#x4E86;&#x6D3B;&#x52A8;&#x5BF9;&#x8C61;&#xFF0C;&#x91CC;&#x9762;&#x7684;&#x5C5E;&#x6027;&#x90FD;&#x80FD;&#x88AB;&#x8BBF;&#x95EE;&#x4E86;&#xFF0C;&#x7136;&#x540E;&#x5F00;&#x59CB;&#x8FDB;&#x884C;&#x6267;&#x884C;&#x9636;&#x6BB5;&#x7684;&#x64CD;&#x4F5C;&#x3002;</p>
+<blockquote>
+<p>&#x8FD9;&#x6837;&#xFF0C;&#x5982;&#x679C;&#x518D;&#x9762;&#x8BD5;&#x7684;&#x65F6;&#x5019;&#x88AB;&#x95EE;&#x5230;&#x53D8;&#x91CF;&#x5BF9;&#x8C61;&#x548C;&#x6D3B;&#x52A8;&#x5BF9;&#x8C61;&#x6709;&#x4EC0;&#x4E48;&#x533A;&#x522B;&#xFF0C;&#x5C31;&#x53C8;&#x53EF;&#x4EE5;&#x81EA;&#x5982;&#x7684;&#x5E94;&#x7B54;&#x4E86;&#xFF0C;&#x4ED6;&#x4EEC;&#x5176;&#x5B9E;&#x90FD;&#x662F;&#x540C;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x53EA;&#x662F;&#x5904;&#x4E8E;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#x7684;&#x4E0D;&#x540C;&#x751F;&#x547D;&#x5468;&#x671F;&#x3002;&#x4E0D;&#x8FC7;&#x53EA;&#x6709;&#x5904;&#x4E8E;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x6808;&#x6808;&#x9876;&#x7684;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#x4E2D;&#x7684;&#x53D8;&#x91CF;&#x5BF9;&#x8C61;&#xFF0C;&#x624D;&#x4F1A;&#x53D8;&#x6210;&#x6D3B;&#x52A8;&#x5BF9;&#x8C61;&#x3002;</p>
+</blockquote>
+<pre><code class="lang-javascript"><span class="hljs-comment">// &#x6267;&#x884C;&#x9636;&#x6BB5;</span>
+VO -&gt;  AO   <span class="hljs-comment">// Active Object</span>
+AO = {
+    <span class="hljs-built_in">arguments</span>: {...},
+    foo: <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">foo</span> <span class="hljs-attr">reference</span>&gt;</span>,
+    a: 1,
+    this: Window
+}
+</span></code></pre>
+<p>&#x56E0;&#x6B64;&#xFF0C;&#x4E0A;&#x9762;&#x7684;&#x4F8B;&#x5B50;demo1&#xFF0C;&#x6267;&#x884C;&#x987A;&#x5E8F;&#x5C31;&#x53D8;&#x6210;&#x4E86;&#x8FD9;&#x6837;</p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">test</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-number">2</span>;
+    }
+    <span class="hljs-keyword">var</span> a;
+    <span class="hljs-built_in">console</span>.log(a);
+    <span class="hljs-built_in">console</span>.log(foo());
+    a = <span class="hljs-number">1</span>;
+}
+
+test();
+</code></pre>
+<p>&#x518D;&#x6765;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#xFF0C;&#x5DE9;&#x56FA;&#x4E00;&#x4E0B;&#x6211;&#x4EEC;&#x7684;&#x7406;&#x89E3;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// demo2</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">test</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-built_in">console</span>.log(foo);
+    <span class="hljs-built_in">console</span>.log(bar);
+
+    <span class="hljs-keyword">var</span> foo = <span class="hljs-string">&apos;Hello&apos;</span>;
+    <span class="hljs-built_in">console</span>.log(foo);
+    <span class="hljs-keyword">var</span> bar = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;world&apos;</span>;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;hello&apos;</span>;
+    }
+}
+
+test();
+</code></pre>
+<pre><code class="lang-javascript"><span class="hljs-comment">// &#x521B;&#x5EFA;&#x9636;&#x6BB5;</span>
+VO = {
+    <span class="hljs-built_in">arguments</span>: {...},
+    foo: <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">foo</span> <span class="hljs-attr">reference</span>&gt;</span>,
+    bar: undefined
+}
+// &#x8FD9;&#x91CC;&#x6709;&#x4E00;&#x4E2A;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x5730;&#x65B9;&#xFF0C;&#x56E0;&#x4E3A;var&#x58F0;&#x660E;&#x7684;&#x53D8;&#x91CF;&#x5F53;&#x9047;&#x5230;&#x540C;&#x540D;&#x7684;&#x5C5E;&#x6027;&#x65F6;&#xFF0C;&#x4F1A;&#x8DF3;&#x8FC7;&#x800C;&#x4E0D;&#x4F1A;&#x8986;&#x76D6;
+</span></code></pre>
+<pre><code class="lang-javascript"><span class="hljs-comment">// &#x6267;&#x884C;&#x9636;&#x6BB5;</span>
+VO -&gt; AO
+VO = {
+    <span class="hljs-built_in">arguments</span>: {...},
+    foo: <span class="hljs-string">&apos;Hello&apos;</span>,
+    bar: <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">bar</span> <span class="hljs-attr">reference</span>&gt;</span>,
+    this: Window
+}
+</span></code></pre>
+<p>&#x9700;&#x8981;&#x7ED3;&#x5408;&#x4E0A;&#x9762;&#x7684;&#x77E5;&#x8BC6;&#xFF0C;&#x4ED4;&#x7EC6;&#x5BF9;&#x6BD4;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x4E2D;&#x53D8;&#x91CF;&#x5BF9;&#x8C61;&#x4ECE;&#x521B;&#x5EFA;&#x9636;&#x6BB5;&#x5230;&#x6267;&#x884C;&#x9636;&#x6BB5;&#x7684;&#x53D8;&#x5316;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x5DF2;&#x7ECF;&#x7406;&#x89E3;&#x4E86;&#xFF0C;&#x8BF4;&#x660E;&#x53D8;&#x91CF;&#x5BF9;&#x8C61;&#x76F8;&#x5173;&#x7684;&#x4E1C;&#x897F;&#x90FD;&#x5DF2;&#x7ECF;&#x96BE;&#x4E0D;&#x5012;&#x4F60;&#x4E86;&#x3002;</p>
+<h5 id="&#x5168;&#x5C40;&#x4E0A;&#x4E0B;&#x6587;&#x7684;&#x53D8;&#x91CF;&#x5BF9;&#x8C61;">&#x5168;&#x5C40;&#x4E0A;&#x4E0B;&#x6587;&#x7684;&#x53D8;&#x91CF;&#x5BF9;&#x8C61;</h5>
+<p>&#x4EE5;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x4E3A;&#x4F8B;&#xFF0C;&#x5168;&#x5C40;&#x5BF9;&#x8C61;&#x4E3A;window&#x3002;
+&#x5168;&#x5C40;&#x4E0A;&#x4E0B;&#x6587;&#x6709;&#x4E00;&#x4E2A;&#x7279;&#x6B8A;&#x7684;&#x5730;&#x65B9;&#xFF0C;&#x5B83;&#x7684;&#x53D8;&#x91CF;&#x5BF9;&#x8C61;&#xFF0C;&#x5C31;&#x662F;window&#x5BF9;&#x8C61;&#x3002;&#x800C;&#x8FD9;&#x4E2A;&#x7279;&#x6B8A;&#xFF0C;&#x5728;this&#x6307;&#x5411;&#x4E0A;&#x4E5F;&#x540C;&#x6837;&#x9002;&#x7528;&#xFF0C;this&#x4E5F;&#x662F;&#x6307;&#x5411;window&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// &#x4EE5;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x4E3A;&#x4F8B;&#xFF0C;&#x5168;&#x5C40;&#x5BF9;&#x8C61;&#x4E3A;window</span>
+<span class="hljs-comment">// &#x5168;&#x5C40;&#x4E0A;&#x4E0B;&#x6587;</span>
+windowEC = {
+    VO: Window,
+    scopeChain: {},
+    <span class="hljs-keyword">this</span>: Window
+}
+</code></pre>
+<p>&#x9664;&#x6B64;&#x4E4B;&#x5916;&#xFF0C;&#x5168;&#x5C40;&#x4E0A;&#x4E0B;&#x6587;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#xFF0C;&#x4E0E;&#x7A0B;&#x5E8F;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x4E00;&#x81F4;&#xFF0C;&#x53EA;&#x8981;&#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x4E0D;&#x7ED3;&#x675F;&#xFF0C;&#x6BD4;&#x5982;&#x5173;&#x6389;&#x6D4F;&#x89C8;&#x5668;&#x7A97;&#x53E3;&#xFF0C;&#x5168;&#x5C40;&#x4E0A;&#x4E0B;&#x6587;&#x5C31;&#x4F1A;&#x4E00;&#x76F4;&#x5B58;&#x5728;&#x3002;&#x5176;&#x4ED6;&#x6240;&#x6709;&#x7684;&#x4E0A;&#x4E0B;&#x6587;&#x73AF;&#x5883;&#xFF0C;&#x90FD;&#x80FD;&#x76F4;&#x63A5;&#x8BBF;&#x95EE;&#x5168;&#x5C40;&#x4E0A;&#x4E0B;&#x6587;&#x7684;&#x5C5E;&#x6027;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="er-3001-zhi-xing-shang-xia-wen.html" class="navigation navigation-prev " aria-label="Previous page: 二、执行上下文">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="si-3001-zuo-yong-yu-lian-yu-bi-bao.html" class="navigation navigation-next " aria-label="Next page: 四、作用域链与闭包">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"三、变量对象","level":"1.2.3","depth":2,"next":{"title":"四、作用域链与闭包","level":"1.2.4","depth":2,"path":"ji-chu-jin-jie-xi-lie/si-3001-zuo-yong-yu-lian-yu-bi-bao.md","ref":"ji-chu-jin-jie-xi-lie/si-3001-zuo-yong-yu-lian-yu-bi-bao.md","articles":[]},"previous":{"title":"二、执行上下文","level":"1.2.2","depth":2,"path":"ji-chu-jin-jie-xi-lie/er-3001-zhi-xing-shang-xia-wen.md","ref":"ji-chu-jin-jie-xi-lie/er-3001-zhi-xing-shang-xia-wen.md","articles":[]},"dir":"ltr"},"config":{"plugins":["codeblock-filename","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"codeblock-filename":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"yangbo","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Sample GitBook","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"这波能反杀":"http://www.chengweiyang.cn"}},"gitbook":"*","description":"This is a sample book created by gitbook","extension":null},"file":{"path":"ji-chu-jin-jie-xi-lie/san-3001-bian-liang-dui-xiang.md","mtime":"2017-12-01T03:50:34.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-12-01T05:24:45.115Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

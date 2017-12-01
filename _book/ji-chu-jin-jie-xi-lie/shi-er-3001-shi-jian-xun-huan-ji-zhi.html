@@ -1,0 +1,809 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>十二、事件循环机制 · Sample GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="yangbo">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-codeblock-filename/block.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="shi-san-3001-promise.html" />
+    
+    
+    <link rel="prev" href="shi-yi-3001-qian-xi-jquery.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://www.chengweiyang.cn" target="_blank" class="custom-link">这波能反杀</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../ji-chu-jin-jie-xi-lie.html">
+            
+                <a href="../ji-chu-jin-jie-xi-lie.html">
+            
+                    
+                    基础进阶系列
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="yi-3001-nei-cun-kong-jian-xiang-jie.html">
+            
+                <a href="yi-3001-nei-cun-kong-jian-xiang-jie.html">
+            
+                    
+                    一、内存空间详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="er-3001-zhi-xing-shang-xia-wen.html">
+            
+                <a href="er-3001-zhi-xing-shang-xia-wen.html">
+            
+                    
+                    二、执行上下文
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="san-3001-bian-liang-dui-xiang.html">
+            
+                <a href="san-3001-bian-liang-dui-xiang.html">
+            
+                    
+                    三、变量对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="si-3001-zuo-yong-yu-lian-yu-bi-bao.html">
+            
+                <a href="si-3001-zuo-yong-yu-lian-yu-bi-bao.html">
+            
+                    
+                    四、作用域链与闭包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" >
+            
+                <span>
+            
+                    
+                    五、this
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="liu-3001-zai-chrome-zhong-guan-cha-han-shu-diao-yong-zhan-3001-zuo-yong-yu-lian-3001-bi-bao.html">
+            
+                <a href="liu-3001-zai-chrome-zhong-guan-cha-han-shu-diao-yong-zhan-3001-zuo-yong-yu-lian-3001-bi-bao.html">
+            
+                    
+                    六、在chrome中观察函数调用栈、作用域链、闭包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="qi-3001-han-shu-yu-han-shu-shi-bian-cheng.html">
+            
+                <a href="qi-3001-han-shu-yu-han-shu-shi-bian-cheng.html">
+            
+                    
+                    七、函数与函数式编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="ba-3001-ke-li-hua.html">
+            
+                <a href="ba-3001-ke-li-hua.html">
+            
+                    
+                    八、柯里化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="jiu-3001-mian-xiang-dui-xiang.html">
+            
+                <a href="jiu-3001-mian-xiang-dui-xiang.html">
+            
+                    
+                    九、面向对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="shi-3001-mian-xiang-dui-xiang-shi-zhan-zhi-tuo-ye-dui-xiang-feng-zhuang.html">
+            
+                <a href="shi-3001-mian-xiang-dui-xiang-shi-zhan-zhi-tuo-ye-dui-xiang-feng-zhuang.html">
+            
+                    
+                    十、面向对象实战之拖拽对象封装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="shi-yi-3001-qian-xi-jquery.html">
+            
+                <a href="shi-yi-3001-qian-xi-jquery.html">
+            
+                    
+                    十一、浅析jQuery
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.12" data-path="shi-er-3001-shi-jian-xun-huan-ji-zhi.html">
+            
+                <a href="shi-er-3001-shi-jian-xun-huan-ji-zhi.html">
+            
+                    
+                    十二、事件循环机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" data-path="shi-san-3001-promise.html">
+            
+                <a href="shi-san-3001-promise.html">
+            
+                    
+                    十三、Promise
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" data-path="shi-si-3001-es6-chang-yong-zhi-shi-he-ji.html">
+            
+                <a href="shi-si-3001-es6-chang-yong-zhi-shi-he-ji.html">
+            
+                    
+                    十四、ES6常用知识合集
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.15" data-path="shi-wu-3001-xiang-jie-es6-modules.html">
+            
+                <a href="shi-wu-3001-xiang-jie-es6-modules.html">
+            
+                    
+                    十五、详解ES6 Modules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.16" data-path="fu-jian-1-settimeout-yu-bi-bao.html">
+            
+                <a href="fu-jian-1-settimeout-yu-bi-bao.html">
+            
+                    
+                    附件1：setTimeout与闭包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.17" data-path="fu-jian-2-async-await.html">
+            
+                <a href="fu-jian-2-async-await.html">
+            
+                    
+                    附件2：async/await
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >十二、事件循环机制</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>JavaScript&#x7684;&#x5B66;&#x4E60;&#x96F6;&#x6563;&#x800C;&#x5E9E;&#x6742;&#xFF0C;&#x56E0;&#x6B64;&#x5F88;&#x591A;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x5B66;&#x5230;&#x4E86;&#x4E00;&#x4E9B;&#x4E1C;&#x897F;&#xFF0C;&#x4F46;&#x662F;&#x5374;&#x6CA1;&#x529E;&#x6CD5;&#x611F;&#x53D7;&#x5230;&#x81EA;&#x5DF1;&#x7684;&#x8FDB;&#x6B65;&#xFF0C;&#x751A;&#x81F3;&#x8FC7;&#x4E86;&#x4E0D;&#x4E45;&#xFF0C;&#x5C31;&#x628A;&#x5B66;&#x5230;&#x7684;&#x4E1C;&#x897F;&#x7ED9;&#x5FD8;&#x4E86;&#x3002;&#x4E3A;&#x4E86;&#x89E3;&#x51B3;&#x81EA;&#x5DF1;&#x7684;&#x8FD9;&#x4E2A;&#x56F0;&#x6270;&#xFF0C;&#x5728;&#x5B66;&#x4E60;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x6211;&#x4E00;&#x76F4;&#x8BD5;&#x56FE;&#x5728;&#x5BFB;&#x627E;&#x4E00;&#x6761;&#x6838;&#x5FC3;&#x7684;&#x7EBF;&#x7D22;&#xFF0C;&#x53EA;&#x8981;&#x6211;&#x6839;&#x636E;&#x8FD9;&#x6761;&#x7EBF;&#x7D22;&#xFF0C;&#x6211;&#x5C31;&#x80FD;&#x591F;&#x4E00;&#x70B9;&#x4E00;&#x70B9;&#x7684;&#x8FDB;&#x6B65;&#x3002;</p>
+<p>&#x524D;&#x7AEF;&#x57FA;&#x7840;&#x8FDB;&#x9636;&#x6B63;&#x662F;&#x56F4;&#x7ED5;&#x8FD9;&#x6761;&#x7EBF;&#x7D22;&#x6162;&#x6162;&#x5C55;&#x5F00;&#xFF0C;&#x800C;&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;&#x673A;&#x5236;(Event Loop)&#xFF0C;&#x5219;&#x662F;&#x8FD9;&#x6761;&#x7EBF;&#x7D22;&#x7684;&#x6700;&#x5173;&#x952E;&#x7684;&#x77E5;&#x8BC6;&#x70B9;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x6211;&#x5C31;&#x9A6C;&#x4E0D;&#x505C;&#x8E44;&#x7684;&#x53BB;&#x6DF1;&#x5165;&#x7684;&#x5B66;&#x4E60;&#x4E86;&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;&#x673A;&#x5236;&#xFF0C;&#x5E76;&#x603B;&#x7ED3;&#x51FA;&#x4E86;&#x8FD9;&#x7BC7;&#x6587;&#x7AE0;&#x8DDF;&#x5927;&#x5BB6;&#x5206;&#x4EAB;&#x3002;</p>
+<p>&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;&#x673A;&#x5236;&#x4ECE;&#x6574;&#x4F53;&#x4E0A;&#x7684;&#x544A;&#x8BC9;&#x4E86;&#x6211;&#x4EEC;&#x6240;&#x5199;&#x7684;JavaScript&#x4EE3;&#x7801;&#x7684;&#x6267;&#x884C;&#x987A;&#x5E8F;&#x3002;&#x4F46;&#x662F;&#x5728;&#x6211;&#x5B66;&#x4E60;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x627E;&#x5230;&#x7684;&#x8BB8;&#x591A;&#x56FD;&#x5185;&#x535A;&#x5BA2;&#x6587;&#x7AE0;&#x5BF9;&#x4E8E;&#x5B83;&#x7684;&#x8BB2;&#x89E3;&#x6D45;&#x5C1D;&#x8F84;&#x6B62;&#xFF0C;&#x4E0D;&#x5F97;&#x5176;&#x6CD5;&#xFF0C;&#x5F88;&#x591A;&#x6587;&#x7AE0;&#x5728;&#x56FE;&#x4E2D;&#x753B;&#x4E2A;&#x5708;&#x5C31;&#x8868;&#x793A;&#x5FAA;&#x73AF;&#x4E86;&#xFF0C;&#x770B;&#x4E86;&#x4E4B;&#x540E;&#x4E5F;&#x6CA1;&#x611F;&#x89C9;&#x660E;&#x767D;&#x4E86;&#x591A;&#x5C11;&#x3002;&#x4F46;&#x662F;&#x4ED6;&#x53C8;&#x5982;&#x6B64;&#x91CD;&#x8981;&#xFF0C;&#x4EE5;&#x81F4;&#x4E8E;&#x5F53;&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x9762;&#x8BD5;&#x4E2D;&#x9AD8;&#x7EA7;&#x5C97;&#x4F4D;&#x65F6;&#xFF0C;&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;&#x673A;&#x5236;&#x603B;&#x662F;&#x7ED5;&#x4E0D;&#x5F00;&#x7684;&#x8BDD;&#x9898;&#x3002;&#x7279;&#x522B;&#x662F;ES6&#x4E2D;&#x6B63;&#x5F0F;&#x52A0;&#x5165;&#x4E86;Promise&#x5BF9;&#x8C61;&#x4E4B;&#x540E;&#xFF0C;&#x5BF9;&#x4E8E;&#x65B0;&#x6807;&#x51C6;&#x4E2D;&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;&#x673A;&#x5236;&#x7684;&#x7406;&#x89E3;&#x5C31;&#x53D8;&#x5F97;&#x66F4;&#x52A0;&#x91CD;&#x8981;&#x3002;&#x8FD9;&#x5C31;&#x5F88;&#x5C34;&#x5C2C;&#x4E86;&#x3002;</p>
+<blockquote>
+<p>&#x6700;&#x8FD1;&#x6709;&#x4E24;&#x7BC7;&#x6BD4;&#x8F83;&#x706B;&#x7684;&#x6587;&#x7AE0;&#x4E5F;&#x8868;&#x8FBE;&#x4E86;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x7684;&#x91CD;&#x8981;&#x6027;&#x3002;</p>
+<p><a href="https://zhuanlan.zhihu.com/p/25407758" target="_blank">&#x8FD9;&#x4E2A;&#x524D;&#x7AEF;&#x9762;&#x8BD5;&#x5728;&#x641E;&#x4E8B;</a>
+<a href="https://juejin.im/post/58cf180b0ce4630057d6727c" target="_blank">80% &#x5E94;&#x8058;&#x8005;&#x90FD;&#x4E0D;&#x53CA;&#x683C;&#x7684; JS &#x9762;&#x8BD5;&#x9898;</a></p>
+<p>&#x4F46;&#x662F;&#x5F88;&#x9057;&#x61BE;&#x7684;&#x662F;&#xFF0C;&#x5927;&#x795E;&#x4EEC;&#x544A;&#x8BC9;&#x4E86;&#x5927;&#x5BB6;&#x8FD9;&#x4E2A;&#x77E5;&#x8BC6;&#x70B9;&#x5F88;&#x91CD;&#x8981;&#xFF0C;&#x5374;&#x5E76;&#x6CA1;&#x6709;&#x544A;&#x8BC9;&#x5927;&#x5BB6;&#x4E3A;&#x4EC0;&#x4E48;&#x4F1A;&#x8FD9;&#x6837;&#x3002;&#x6240;&#x4EE5;&#x5F53;&#x6211;&#x4EEC;&#x5728;&#x9762;&#x8BD5;&#x65F6;&#x9047;&#x5230;&#x8FD9;&#x6837;&#x7684;&#x95EE;&#x9898;&#x65F6;&#xFF0C;&#x5C31;&#x7B97;&#x4F60;&#x77E5;&#x9053;&#x4E86;&#x7ED3;&#x679C;&#xFF0C;&#x9762;&#x8BD5;&#x5B98;&#x518D;&#x8FDB;&#x4E00;&#x6B65;&#x95EE;&#x4E00;&#x4E0B;&#xFF0C;&#x6211;&#x4EEC;&#x4F9D;&#x7136;&#x61F5;&#x903C;&#x3002;</p>
+</blockquote>
+<p>&#x5728;&#x5B66;&#x4E60;&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;&#x673A;&#x5236;&#x4E4B;&#x524D;&#xFF0C;&#x6211;&#x9ED8;&#x8BA4;&#x4F60;&#x5DF2;&#x7ECF;&#x61C2;&#x5F97;&#x4E86;&#x5982;&#x4E0B;&#x6982;&#x5FF5;&#xFF0C;&#x5982;&#x679C;&#x4ECD;&#x7136;&#x6709;&#x7591;&#x95EE;&#xFF0C;&#x53EF;&#x4EE5;&#x56DE;&#x8FC7;&#x5934;&#x53BB;&#x770B;&#x770B;&#x6211;&#x4EE5;&#x524D;&#x7684;&#x6587;&#x7AE0;&#x3002;</p>
+<ul>
+<li>&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;(Execution context)</li>
+<li>&#x51FD;&#x6570;&#x8C03;&#x7528;&#x6808;(call stack)</li>
+<li>&#x961F;&#x5217;&#x6570;&#x636E;&#x7ED3;&#x6784;(queue)</li>
+<li>Promise(&#x6211;&#x4F1A;&#x5728;&#x4E0B;&#x4E00;&#x7BC7;&#x6587;&#x7AE0;&#x4E13;&#x95E8;&#x603B;&#x7ED3;Promise&#x7684;&#x8BE6;&#x7EC6;&#x4F7F;&#x7528;)</li>
+</ul>
+<blockquote>
+<p>&#x56E0;&#x4E3A;chrome&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x65B0;&#x6807;&#x51C6;&#x4E2D;&#x7684;&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;&#x673A;&#x5236;&#x4E0E;nodejs&#x7C7B;&#x4F3C;&#xFF0C;&#x56E0;&#x6B64;&#x6B64;&#x5904;&#x5C31;&#x6574;&#x5408;nodejs&#x4E00;&#x8D77;&#x6765;&#x7406;&#x89E3;&#xFF0C;&#x5176;&#x4E2D;&#x4F1A;&#x4ECB;&#x7ECD;&#x5230;&#x51E0;&#x4E2A;nodejs&#x6709;&#xFF0C;&#x4F46;&#x662F;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x6CA1;&#x6709;&#x7684;API&#xFF0C;&#x5927;&#x5BB6;&#x53EA;&#x9700;&#x8981;&#x4E86;&#x89E3;&#x5C31;&#x597D;&#xFF0C;&#x4E0D;&#x4E00;&#x5B9A;&#x975E;&#x8981;&#x77E5;&#x9053;&#x5979;&#x662F;&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x3002;&#x6BD4;&#x5982;process.nextTick&#xFF0C;setImmediate</p>
+</blockquote>
+<p>OK&#xFF0C;&#x90A3;&#x6211;&#x5C31;&#x5148;&#x629B;&#x51FA;&#x7ED3;&#x8BBA;&#xFF0C;&#x7136;&#x540E;&#x4EE5;&#x4F8B;&#x5B50;&#x4E0E;&#x56FE;&#x793A;&#x8BE6;&#x7EC6;&#x7ED9;&#x5927;&#x5BB6;&#x6F14;&#x793A;&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;&#x673A;&#x5236;&#x3002;</p>
+<ul>
+<li><p>&#x6211;&#x4EEC;&#x77E5;&#x9053;JavaScript&#x7684;&#x4E00;&#x5927;&#x7279;&#x70B9;&#x5C31;&#x662F;&#x5355;&#x7EBF;&#x7A0B;&#xFF0C;&#x800C;&#x8FD9;&#x4E2A;&#x7EBF;&#x7A0B;&#x4E2D;&#x62E5;&#x6709;&#x552F;&#x4E00;&#x7684;&#x4E00;&#x4E2A;&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;&#x3002;</p>
+<blockquote>
+<p>&#x5F53;&#x7136;&#x65B0;&#x6807;&#x51C6;&#x4E2D;&#x7684;web worker&#x6D89;&#x53CA;&#x5230;&#x4E86;&#x591A;&#x7EBF;&#x7A0B;&#xFF0C;&#x6211;&#x5BF9;&#x5B83;&#x4E86;&#x89E3;&#x4E5F;&#x4E0D;&#x591A;&#xFF0C;&#x8FD9;&#x91CC;&#x5C31;&#x4E0D;&#x8BA8;&#x8BBA;&#x4E86;&#x3002;</p>
+</blockquote>
+</li>
+<li><p>JavaScript&#x4EE3;&#x7801;&#x7684;&#x6267;&#x884C;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x9664;&#x4E86;&#x4F9D;&#x9760;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x6808;&#x6765;&#x641E;&#x5B9A;&#x51FD;&#x6570;&#x7684;&#x6267;&#x884C;&#x987A;&#x5E8F;&#x5916;&#xFF0C;&#x8FD8;&#x4F9D;&#x9760;&#x4EFB;&#x52A1;&#x961F;&#x5217;(task queue)&#x6765;&#x641E;&#x5B9A;&#x53E6;&#x5916;&#x4E00;&#x4E9B;&#x4EE3;&#x7801;&#x7684;&#x6267;&#x884C;&#x3002;</p>
+</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/599584-15f617d44cdb990d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="&#x961F;&#x5217;&#x6570;&#x636E;&#x7ED3;&#x6784;"></p>
+<ul>
+<li><p>&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x4E2D;&#xFF0C;&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;&#x662F;&#x552F;&#x4E00;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x4EFB;&#x52A1;&#x961F;&#x5217;&#x53EF;&#x4EE5;&#x62E5;&#x6709;&#x591A;&#x4E2A;&#x3002;</p>
+</li>
+<li><p>&#x4EFB;&#x52A1;&#x961F;&#x5217;&#x53C8;&#x5206;&#x4E3A;macro-task&#xFF08;&#x5B8F;&#x4EFB;&#x52A1;&#xFF09;&#x4E0E;micro-task&#xFF08;&#x5FAE;&#x4EFB;&#x52A1;&#xFF09;&#xFF0C;&#x5728;&#x6700;&#x65B0;&#x6807;&#x51C6;&#x4E2D;&#xFF0C;&#x5B83;&#x4EEC;&#x88AB;&#x5206;&#x522B;&#x79F0;&#x4E3A;task&#x4E0E;jobs&#x3002;</p>
+</li>
+<li><p>macro-task&#x5927;&#x6982;&#x5305;&#x62EC;&#xFF1A;script(&#x6574;&#x4F53;&#x4EE3;&#x7801;), setTimeout, setInterval, setImmediate, I/O, UI rendering&#x3002;</p>
+</li>
+<li><p>micro-task&#x5927;&#x6982;&#x5305;&#x62EC;: process.nextTick, Promise, Object.observe(&#x5DF2;&#x5E9F;&#x5F03;), MutationObserver(html5&#x65B0;&#x7279;&#x6027;)</p>
+</li>
+<li><p>setTimeout/Promise&#x7B49;&#x6211;&#x4EEC;&#x79F0;&#x4E4B;&#x4E3A;&#x4EFB;&#x52A1;&#x6E90;&#x3002;&#x800C;&#x8FDB;&#x5165;&#x4EFB;&#x52A1;&#x961F;&#x5217;&#x7684;&#x662F;&#x4ED6;&#x4EEC;&#x6307;&#x5B9A;&#x7684;&#x5177;&#x4F53;&#x6267;&#x884C;&#x4EFB;&#x52A1;&#x3002;</p>
+</li>
+</ul>
+<pre><code class="lang-javascript"><span class="hljs-comment">// setTimeout&#x4E2D;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x624D;&#x662F;&#x8FDB;&#x5165;&#x4EFB;&#x52A1;&#x961F;&#x5217;&#x7684;&#x4EFB;&#x52A1;</span>
+setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;xxxx&apos;</span>);
+})
+<span class="hljs-comment">// &#x975E;&#x5E38;&#x591A;&#x7684;&#x540C;&#x5B66;&#x5BF9;&#x4E8E;setTimeout&#x7684;&#x7406;&#x89E3;&#x5B58;&#x5728;&#x504F;&#x5DEE;&#x3002;&#x6240;&#x4EE5;&#x5927;&#x6982;&#x8BF4;&#x4E00;&#x4E0B;&#x8BEF;&#x89E3;&#xFF1A;</span>
+<span class="hljs-comment">// setTimeout&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#x5206;&#x53D1;&#x5668;&#xFF0C;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x4F1A;&#x7ACB;&#x5373;&#x6267;&#x884C;&#xFF0C;&#x800C;&#x5B83;&#x6240;&#x8981;&#x5206;&#x53D1;&#x7684;&#x4EFB;&#x52A1;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x5B83;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x624D;&#x662F;&#x5EF6;&#x8FDF;&#x6267;&#x884C;</span>
+</code></pre>
+<ul>
+<li><p>&#x6765;&#x81EA;&#x4E0D;&#x540C;&#x4EFB;&#x52A1;&#x6E90;&#x7684;&#x4EFB;&#x52A1;&#x4F1A;&#x8FDB;&#x5165;&#x5230;&#x4E0D;&#x540C;&#x7684;&#x4EFB;&#x52A1;&#x961F;&#x5217;&#x3002;&#x5176;&#x4E2D;setTimeout&#x4E0E;setInterval&#x662F;&#x540C;&#x6E90;&#x7684;&#x3002;</p>
+</li>
+<li><p>&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;&#x7684;&#x987A;&#x5E8F;&#xFF0C;&#x51B3;&#x5B9A;&#x4E86;JavaScript&#x4EE3;&#x7801;&#x7684;&#x6267;&#x884C;&#x987A;&#x5E8F;&#x3002;&#x5B83;&#x4ECE;script(&#x6574;&#x4F53;&#x4EE3;&#x7801;)&#x5F00;&#x59CB;&#x7B2C;&#x4E00;&#x6B21;&#x5FAA;&#x73AF;&#x3002;&#x4E4B;&#x540E;&#x5168;&#x5C40;&#x4E0A;&#x4E0B;&#x6587;&#x8FDB;&#x5165;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x6808;&#x3002;&#x76F4;&#x5230;&#x8C03;&#x7528;&#x6808;&#x6E05;&#x7A7A;(&#x53EA;&#x5269;&#x5168;&#x5C40;)&#xFF0C;&#x7136;&#x540E;&#x6267;&#x884C;&#x6240;&#x6709;&#x7684;micro-task&#x3002;&#x5F53;&#x6240;&#x6709;&#x53EF;&#x6267;&#x884C;&#x7684;micro-task&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#x4E4B;&#x540E;&#x3002;&#x5FAA;&#x73AF;&#x518D;&#x6B21;&#x4ECE;macro-task&#x5F00;&#x59CB;&#xFF0C;&#x627E;&#x5230;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#x961F;&#x5217;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x6267;&#x884C;&#x6240;&#x6709;&#x7684;micro-task&#xFF0C;&#x8FD9;&#x6837;&#x4E00;&#x76F4;&#x5FAA;&#x73AF;&#x4E0B;&#x53BB;&#x3002;</p>
+</li>
+<li><p>&#x5176;&#x4E2D;&#x6BCF;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#x7684;&#x6267;&#x884C;&#xFF0C;&#x65E0;&#x8BBA;&#x662F;macro-task&#x8FD8;&#x662F;micro-task&#xFF0C;&#x90FD;&#x662F;&#x501F;&#x52A9;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x6808;&#x6765;&#x5B8C;&#x6210;&#x3002;</p>
+</li>
+</ul>
+<p>&#x7EAF;&#x6587;&#x5B57;&#x8868;&#x8FF0;&#x786E;&#x5B9E;&#x6709;&#x70B9;&#x5E72;&#x6DA9;&#xFF0C;&#x56E0;&#x6B64;&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x901A;&#x8FC7;2&#x4E2A;&#x4F8B;&#x5B50;&#xFF0C;&#x6765;&#x9010;&#x6B65;&#x7406;&#x89E3;&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;&#x7684;&#x5177;&#x4F53;&#x987A;&#x5E8F;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// demo01  &#x51FA;&#x81EA;&#x4E8E;&#x4E0A;&#x9762;&#x6211;&#x5F15;&#x7528;&#x6587;&#x7AE0;&#x7684;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#xFF0C;&#x6211;&#x4EEC;&#x6765;&#x6839;&#x636E;&#x4E0A;&#x9762;&#x7684;&#x7ED3;&#x8BBA;&#xFF0C;&#x4E00;&#x6B65;&#x4E00;&#x6B65;&#x5206;&#x6790;&#x5177;&#x4F53;&#x7684;&#x6267;&#x884C;&#x8FC7;&#x7A0B;&#x3002;</span>
+<span class="hljs-comment">// &#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#x7406;&#x89E3;&#xFF0C;&#x6211;&#x4EE5;&#x6253;&#x5370;&#x51FA;&#x6765;&#x7684;&#x5B57;&#x7B26;&#x4F5C;&#x4E3A;&#x5F53;&#x524D;&#x7684;&#x4EFB;&#x52A1;&#x540D;&#x79F0;</span>
+setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;timeout1&apos;</span>);
+})
+
+<span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">resolve</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;promise1&apos;</span>);
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">1000</span>; i++) {
+        i == <span class="hljs-number">99</span> &amp;&amp; resolve();
+    }
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;promise2&apos;</span>);
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;then1&apos;</span>);
+})
+
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;global1&apos;</span>);
+</code></pre>
+<p>&#x9996;&#x5148;&#xFF0C;&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;&#x4ECE;&#x5B8F;&#x4EFB;&#x52A1;&#x961F;&#x5217;&#x5F00;&#x59CB;&#xFF0C;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#xFF0C;&#x5B8F;&#x4EFB;&#x52A1;&#x961F;&#x5217;&#x4E2D;&#xFF0C;&#x53EA;&#x6709;&#x4E00;&#x4E2A;script(&#x6574;&#x4F53;&#x4EE3;&#x7801;)&#x4EFB;&#x52A1;&#x3002;&#x6BCF;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#x7684;&#x6267;&#x884C;&#x987A;&#x5E8F;&#xFF0C;&#x90FD;&#x4F9D;&#x9760;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x6808;&#x6765;&#x641E;&#x5B9A;&#xFF0C;&#x800C;&#x5F53;&#x9047;&#x5230;&#x4EFB;&#x52A1;&#x6E90;&#x65F6;&#xFF0C;&#x5219;&#x4F1A;&#x5148;&#x5206;&#x53D1;&#x4EFB;&#x52A1;&#x5230;&#x5BF9;&#x5E94;&#x7684;&#x961F;&#x5217;&#x4E2D;&#x53BB;&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;&#x4E0A;&#x9762;&#x4F8B;&#x5B50;&#x7684;&#x7B2C;&#x4E00;&#x6B65;&#x6267;&#x884C;&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#x3002;</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/599584-92fc0827aa39e325.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="&#x9996;&#x5148;script&#x4EFB;&#x52A1;&#x5F00;&#x59CB;&#x6267;&#x884C;&#xFF0C;&#x5168;&#x5C40;&#x4E0A;&#x4E0B;&#x6587;&#x5165;&#x6808;"></p>
+<p>&#x7B2C;&#x4E8C;&#x6B65;&#xFF1A;script&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x65F6;&#x9996;&#x5148;&#x9047;&#x5230;&#x4E86;setTimeout&#xFF0C;setTimeout&#x4E3A;&#x4E00;&#x4E2A;&#x5B8F;&#x4EFB;&#x52A1;&#x6E90;&#xFF0C;&#x90A3;&#x4E48;&#x4ED6;&#x7684;&#x4F5C;&#x7528;&#x5C31;&#x662F;&#x5C06;&#x4EFB;&#x52A1;&#x5206;&#x53D1;&#x5230;&#x5B83;&#x5BF9;&#x5E94;&#x7684;&#x961F;&#x5217;&#x4E2D;&#x3002;</p>
+<pre><code class="lang-javascript">setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;timeout1&apos;</span>);
+})
+</code></pre>
+<p><img src="http://upload-images.jianshu.io/upload_images/599584-2a99131c2572f898.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="&#x5B8F;&#x4EFB;&#x52A1;timeout1&#x8FDB;&#x5165;setTimeout&#x961F;&#x5217;"></p>
+<p>&#x7B2C;&#x4E09;&#x6B65;&#xFF1A;script&#x6267;&#x884C;&#x65F6;&#x9047;&#x5230;Promise&#x5B9E;&#x4F8B;&#x3002;Promise&#x6784;&#x9020;&#x51FD;&#x6570;&#x4E2D;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x662F;&#x5728;new&#x7684;&#x65F6;&#x5019;&#x6267;&#x884C;&#xFF0C;&#x56E0;&#x6B64;&#x4E0D;&#x4F1A;&#x8FDB;&#x5165;&#x4EFB;&#x4F55;&#x5176;&#x4ED6;&#x7684;&#x961F;&#x5217;&#xFF0C;&#x800C;&#x662F;&#x76F4;&#x63A5;&#x5728;&#x5F53;&#x524D;&#x4EFB;&#x52A1;&#x76F4;&#x63A5;&#x6267;&#x884C;&#x4E86;&#xFF0C;&#x800C;&#x540E;&#x7EED;&#x7684;.then&#x5219;&#x4F1A;&#x88AB;&#x5206;&#x53D1;&#x5230;micro-task&#x7684;Promise&#x961F;&#x5217;&#x4E2D;&#x53BB;&#x3002;</p>
+<p>&#x56E0;&#x6B64;&#xFF0C;&#x6784;&#x9020;&#x51FD;&#x6570;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x91CC;&#x9762;&#x7684;&#x53C2;&#x6570;&#x8FDB;&#x5165;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x6808;&#x6267;&#x884C;&#x3002;for&#x5FAA;&#x73AF;&#x4E0D;&#x4F1A;&#x8FDB;&#x5165;&#x4EFB;&#x4F55;&#x961F;&#x5217;&#xFF0C;&#x56E0;&#x6B64;&#x4EE3;&#x7801;&#x4F1A;&#x4F9D;&#x6B21;&#x6267;&#x884C;&#xFF0C;&#x6240;&#x4EE5;&#x8FD9;&#x91CC;&#x7684;promise1&#x548C;promise2&#x4F1A;&#x4F9D;&#x6B21;&#x8F93;&#x51FA;&#x3002;</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/599584-774ec33de48c1d41.png" alt="promise1&#x5165;&#x6808;&#x6267;&#x884C;&#xFF0C;&#x8FD9;&#x65F6;promise1&#x88AB;&#x6700;&#x5148;&#x8F93;&#x51FA;"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/599584-8b5e93798f6c9d52.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="resolve&#x5728;for&#x5FAA;&#x73AF;&#x4E2D;&#x5165;&#x6808;&#x6267;&#x884C;"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/599584-521c5da565a35a45.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="&#x6784;&#x9020;&#x51FD;&#x6570;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;resolve&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#x51FA;&#x6808;&#xFF0C;promise2&#x8F93;&#x51FA;&#xFF0C;promise1&#x9875;&#x51FA;&#x6808;&#xFF0C;then&#x6267;&#x884C;&#x65F6;&#xFF0C;Promise&#x4EFB;&#x52A1;then1&#x8FDB;&#x5165;&#x5BF9;&#x5E94;&#x961F;&#x5217;"></p>
+<p>script&#x4EFB;&#x52A1;&#x7EE7;&#x7EED;&#x5F80;&#x4E0B;&#x6267;&#x884C;&#xFF0C;&#x6700;&#x540E;&#x53EA;&#x6709;&#x4E00;&#x53E5;&#x8F93;&#x51FA;&#x4E86;globa1&#xFF0C;&#x7136;&#x540E;&#xFF0C;&#x5168;&#x5C40;&#x4EFB;&#x52A1;&#x5C31;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#x4E86;&#x3002;</p>
+<p>&#x7B2C;&#x56DB;&#x6B65;&#xFF1A;&#x7B2C;&#x4E00;&#x4E2A;&#x5B8F;&#x4EFB;&#x52A1;script&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#x4E4B;&#x540E;&#xFF0C;&#x5C31;&#x5F00;&#x59CB;&#x6267;&#x884C;&#x6240;&#x6709;&#x7684;&#x53EF;&#x6267;&#x884C;&#x7684;&#x5FAE;&#x4EFB;&#x52A1;&#x3002;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#xFF0C;&#x5FAE;&#x4EFB;&#x52A1;&#x4E2D;&#xFF0C;&#x53EA;&#x6709;Promise&#x961F;&#x5217;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;then1&#xFF0C;&#x56E0;&#x6B64;&#x76F4;&#x63A5;&#x6267;&#x884C;&#x5C31;&#x884C;&#x4E86;&#xFF0C;&#x6267;&#x884C;&#x7ED3;&#x679C;&#x8F93;&#x51FA;then1&#xFF0C;&#x5F53;&#x7136;&#xFF0C;&#x4ED6;&#x7684;&#x6267;&#x884C;&#xFF0C;&#x4E5F;&#x662F;&#x8FDB;&#x5165;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x6808;&#x4E2D;&#x6267;&#x884C;&#x7684;&#x3002;</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/599584-dd7673edbbe5e687.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="&#x6267;&#x884C;&#x6240;&#x6709;&#x7684;&#x5FAE;&#x4EFB;&#x52A1;"></p>
+<p>&#x7B2C;&#x4E94;&#x6B65;&#xFF1A;&#x5F53;&#x6240;&#x6709;&#x7684;micro-tast&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#x4E4B;&#x540E;&#xFF0C;&#x8868;&#x793A;&#x7B2C;&#x4E00;&#x8F6E;&#x7684;&#x5FAA;&#x73AF;&#x5C31;&#x7ED3;&#x675F;&#x4E86;&#x3002;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x5C31;&#x5F97;&#x5F00;&#x59CB;&#x7B2C;&#x4E8C;&#x8F6E;&#x7684;&#x5FAA;&#x73AF;&#x3002;&#x7B2C;&#x4E8C;&#x8F6E;&#x5FAA;&#x73AF;&#x4ECD;&#x7136;&#x4ECE;&#x5B8F;&#x4EFB;&#x52A1;macro-task&#x5F00;&#x59CB;&#x3002;</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/599584-881e739c134cb6c9.png" alt="&#x5FAE;&#x4EFB;&#x52A1;&#x88AB;&#x6E05;&#x7A7A;"></p>
+<p>&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x53D1;&#x73B0;&#x5B8F;&#x4EFB;&#x52A1;&#x4E2D;&#xFF0C;&#x53EA;&#x6709;&#x5728;setTimeout&#x961F;&#x5217;&#x4E2D;&#x8FD8;&#x8981;&#x4E00;&#x4E2A;timeout1&#x7684;&#x4EFB;&#x52A1;&#x7B49;&#x5F85;&#x6267;&#x884C;&#x3002;&#x56E0;&#x6B64;&#x5C31;&#x76F4;&#x63A5;&#x6267;&#x884C;&#x5373;&#x53EF;&#x3002;</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/599584-c4ea234b27c5f2f2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="timeout1&#x5165;&#x6808;&#x6267;&#x884C;"></p>
+<p>&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x5B8F;&#x4EFB;&#x52A1;&#x961F;&#x5217;&#x4E0E;&#x5FAE;&#x4EFB;&#x52A1;&#x961F;&#x5217;&#x4E2D;&#x90FD;&#x6CA1;&#x6709;&#x4EFB;&#x52A1;&#x4E86;&#xFF0C;&#x6240;&#x4EE5;&#x4EE3;&#x7801;&#x5C31;&#x4E0D;&#x4F1A;&#x518D;&#x8F93;&#x51FA;&#x5176;&#x4ED6;&#x4E1C;&#x897F;&#x4E86;&#x3002;</p>
+<p>&#x90A3;&#x4E48;&#x4E0A;&#x9762;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x7684;&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x5C31;&#x663E;&#x800C;&#x6613;&#x89C1;&#x3002;&#x5927;&#x5BB6;&#x53EF;&#x4EE5;&#x81EA;&#x884C;&#x5C1D;&#x8BD5;&#x4F53;&#x4F1A;&#x3002;</p>
+<p>&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x6BD4;&#x8F83;&#x7B80;&#x7B54;&#xFF0C;&#x6D89;&#x53CA;&#x5230;&#x7684;&#x961F;&#x5217;&#x4EFB;&#x52A1;&#x5E76;&#x4E0D;&#x591A;&#xFF0C;&#x56E0;&#x6B64;&#x8BFB;&#x61C2;&#x4E86;&#x5B83;&#x8FD8;&#x4E0D;&#x80FD;&#x5168;&#x9762;&#x7684;&#x4E86;&#x89E3;&#x5230;&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;&#x673A;&#x5236;&#x7684;&#x5168;&#x8C8C;&#x3002;&#x6240;&#x4EE5;&#x6211;&#x4E0B;&#x9762;&#x5F04;&#x4E86;&#x4E00;&#x4E2A;&#x590D;&#x6742;&#x4E00;&#x70B9;&#x7684;&#x4F8B;&#x5B50;&#xFF0C;&#x518D;&#x7ED9;&#x5927;&#x5BB6;&#x89E3;&#x6790;&#x4E00;&#x756A;&#xFF0C;&#x76F8;&#x4FE1;&#x8BFB;&#x61C2;&#x4E4B;&#x540E;&#xFF0C;&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x518D;&#x9762;&#x8BD5;&#x4E2D;&#x518D;&#x6B21;&#x88AB;&#x95EE;&#x5230;&#x5C31;&#x96BE;&#x4E0D;&#x5012;&#x5927;&#x5BB6;&#x4E86;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// demo02</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;golb1&apos;</span>);
+
+setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;timeout1&apos;</span>);
+    process.nextTick(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;timeout1_nextTick&apos;</span>);
+    })
+    <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">resolve</span>) </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;timeout1_promise&apos;</span>);
+        resolve();
+    }).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;timeout1_then&apos;</span>)
+    })
+})
+
+setImmediate(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;immediate1&apos;</span>);
+    process.nextTick(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;immediate1_nextTick&apos;</span>);
+    })
+    <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">resolve</span>) </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;immediate1_promise&apos;</span>);
+        resolve();
+    }).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;immediate1_then&apos;</span>)
+    })
+})
+
+process.nextTick(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;glob1_nextTick&apos;</span>);
+})
+<span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">resolve</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;glob1_promise&apos;</span>);
+    resolve();
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;glob1_then&apos;</span>)
+})
+
+setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;timeout2&apos;</span>);
+    process.nextTick(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;timeout2_nextTick&apos;</span>);
+    })
+    <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">resolve</span>) </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;timeout2_promise&apos;</span>);
+        resolve();
+    }).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;timeout2_then&apos;</span>)
+    })
+})
+
+process.nextTick(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;glob2_nextTick&apos;</span>);
+})
+<span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">resolve</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;glob2_promise&apos;</span>);
+    resolve();
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;glob2_then&apos;</span>)
+})
+
+setImmediate(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;immediate2&apos;</span>);
+    process.nextTick(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;immediate2_nextTick&apos;</span>);
+    })
+    <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">resolve</span>) </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;immediate2_promise&apos;</span>);
+        resolve();
+    }).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;immediate2_then&apos;</span>)
+    })
+})
+</code></pre>
+<p>&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x770B;&#x4E0A;&#x53BB;&#x6709;&#x70B9;&#x590D;&#x6742;&#xFF0C;&#x4E71;&#x4E03;&#x516B;&#x7CDF;&#x7684;&#x4EE3;&#x7801;&#x4E00;&#x5927;&#x5806;&#xFF0C;&#x4E0D;&#x8FC7;&#x4E0D;&#x7528;&#x62C5;&#x5FC3;&#xFF0C;&#x6211;&#x4EEC;&#x4E00;&#x6B65;&#x4E00;&#x6B65;&#x6765;&#x5206;&#x6790;&#x4E00;&#x4E0B;&#x3002;</p>
+<p>&#x7B2C;&#x4E00;&#x6B65;&#xFF1A;&#x5B8F;&#x4EFB;&#x52A1;script&#x9996;&#x5148;&#x6267;&#x884C;&#x3002;&#x5168;&#x5C40;&#x5165;&#x6808;&#x3002;glob1&#x8F93;&#x51FA;&#x3002;</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/599584-5ae0b593167e499b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="script&#x9996;&#x5148;&#x6267;&#x884C;"></p>
+<p>&#x7B2C;&#x4E8C;&#x6B65;&#xFF0C;&#x6267;&#x884C;&#x8FC7;&#x7A0B;&#x9047;&#x5230;setTimeout&#x3002;setTimeout&#x4F5C;&#x4E3A;&#x4EFB;&#x52A1;&#x5206;&#x53D1;&#x5668;&#xFF0C;&#x5C06;&#x4EFB;&#x52A1;&#x5206;&#x53D1;&#x5230;&#x5BF9;&#x5E94;&#x7684;&#x5B8F;&#x4EFB;&#x52A1;&#x961F;&#x5217;&#x4E2D;&#x3002;</p>
+<pre><code class="lang-javascript">setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;timeout1&apos;</span>);
+    process.nextTick(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;timeout1_nextTick&apos;</span>);
+    })
+    <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">resolve</span>) </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;timeout1_promise&apos;</span>);
+        resolve();
+    }).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;timeout1_then&apos;</span>)
+    })
+})
+</code></pre>
+<p><img src="http://upload-images.jianshu.io/upload_images/599584-afded6f26c106326.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="timeout1&#x8FDB;&#x5165;&#x5BF9;&#x5E94;&#x961F;&#x5217;"></p>
+<p>&#x7B2C;&#x4E09;&#x6B65;&#xFF1A;&#x6267;&#x884C;&#x8FC7;&#x7A0B;&#x9047;&#x5230;setImmediate&#x3002;setImmediate&#x4E5F;&#x662F;&#x4E00;&#x4E2A;&#x5B8F;&#x4EFB;&#x52A1;&#x5206;&#x53D1;&#x5668;&#xFF0C;&#x5C06;&#x4EFB;&#x52A1;&#x5206;&#x53D1;&#x5230;&#x5BF9;&#x5E94;&#x7684;&#x4EFB;&#x52A1;&#x961F;&#x5217;&#x4E2D;&#x3002;setImmediate&#x7684;&#x4EFB;&#x52A1;&#x961F;&#x5217;&#x4F1A;&#x5728;setTimeout&#x961F;&#x5217;&#x7684;&#x540E;&#x9762;&#x6267;&#x884C;&#x3002;</p>
+<pre><code class="lang-javascript">setImmediate(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;immediate1&apos;</span>);
+    process.nextTick(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;immediate1_nextTick&apos;</span>);
+    })
+    <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">resolve</span>) </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;immediate1_promise&apos;</span>);
+        resolve();
+    }).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;immediate1_then&apos;</span>)
+    })
+})
+</code></pre>
+<p><img src="http://upload-images.jianshu.io/upload_images/599584-c22a5e6567ec25d3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="&#x8FDB;&#x5165;setImmediate&#x961F;&#x5217;"></p>
+<p>&#x7B2C;&#x56DB;&#x6B65;&#xFF1A;&#x6267;&#x884C;&#x9047;&#x5230;nextTick&#xFF0C;process.nextTick&#x662F;&#x4E00;&#x4E2A;&#x5FAE;&#x4EFB;&#x52A1;&#x5206;&#x53D1;&#x5668;&#xFF0C;&#x5B83;&#x4F1A;&#x5C06;&#x4EFB;&#x52A1;&#x5206;&#x53D1;&#x5230;&#x5BF9;&#x5E94;&#x7684;&#x5FAE;&#x4EFB;&#x52A1;&#x961F;&#x5217;&#x4E2D;&#x53BB;&#x3002;</p>
+<pre><code class="lang-javascript">process.nextTick(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;glob1_nextTick&apos;</span>);
+})
+</code></pre>
+<p><img src="http://upload-images.jianshu.io/upload_images/599584-8d16de95f6a12b25.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="nextTick"></p>
+<p>&#x7B2C;&#x4E94;&#x6B65;&#xFF1A;&#x6267;&#x884C;&#x9047;&#x5230;Promise&#x3002;Promise&#x7684;then&#x65B9;&#x6CD5;&#x4F1A;&#x5C06;&#x4EFB;&#x52A1;&#x5206;&#x53D1;&#x5230;&#x5BF9;&#x5E94;&#x7684;&#x5FAE;&#x4EFB;&#x52A1;&#x961F;&#x5217;&#x4E2D;&#xFF0C;&#x4F46;&#x662F;&#x5B83;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4E2D;&#x7684;&#x65B9;&#x6CD5;&#x4F1A;&#x76F4;&#x63A5;&#x6267;&#x884C;&#x3002;&#x56E0;&#x6B64;&#xFF0C;glob1_promise&#x4F1A;&#x7B2C;&#x4E8C;&#x4E2A;&#x8F93;&#x51FA;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">resolve</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;glob1_promise&apos;</span>);
+    resolve();
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;glob1_then&apos;</span>)
+})
+</code></pre>
+<p><img src="http://upload-images.jianshu.io/upload_images/599584-792877853f338494.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="&#x5148;&#x662F;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x6808;&#x7684;&#x53D8;&#x5316;"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/599584-b5c548ec48521c87.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="&#x7136;&#x540E;glob1_then&#x4EFB;&#x52A1;&#x8FDB;&#x5165;&#x961F;&#x5217;"></p>
+<p>&#x7B2C;&#x516D;&#x6B65;&#xFF1A;&#x6267;&#x884C;&#x9047;&#x5230;&#x7B2C;&#x4E8C;&#x4E2A;setTimeout&#x3002;</p>
+<pre><code class="lang-javascript">setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;timeout2&apos;</span>);
+    process.nextTick(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;timeout2_nextTick&apos;</span>);
+    })
+    <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">resolve</span>) </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;timeout2_promise&apos;</span>);
+        resolve();
+    }).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;timeout2_then&apos;</span>)
+    })
+})
+</code></pre>
+<p><img src="http://upload-images.jianshu.io/upload_images/599584-0392b96fd8fd2281.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="timeout2&#x8FDB;&#x5165;&#x5BF9;&#x5E94;&#x961F;&#x5217;"></p>
+<p>&#x7B2C;&#x4E03;&#x6B65;&#xFF1A;&#x5148;&#x540E;&#x9047;&#x5230;nextTick&#x4E0E;Promise</p>
+<pre><code class="lang-javascript">process.nextTick(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;glob2_nextTick&apos;</span>);
+})
+<span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">resolve</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;glob2_promise&apos;</span>);
+    resolve();
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;glob2_then&apos;</span>)
+})
+</code></pre>
+<p><img src="http://upload-images.jianshu.io/upload_images/599584-7001e3438df47eb0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="glob2_nextTick&#x4E0E;Promise&#x4EFB;&#x52A1;&#x5206;&#x522B;&#x8FDB;&#x5165;&#x5404;&#x81EA;&#x7684;&#x961F;&#x5217;"></p>
+<p>&#x7B2C;&#x516B;&#x6B65;&#xFF1A;&#x518D;&#x6B21;&#x9047;&#x5230;setImmediate&#x3002;</p>
+<pre><code class="lang-javascript">setImmediate(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;immediate2&apos;</span>);
+    process.nextTick(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;immediate2_nextTick&apos;</span>);
+    })
+    <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">resolve</span>) </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;immediate2_promise&apos;</span>);
+        resolve();
+    }).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;immediate2_then&apos;</span>)
+    })
+})
+</code></pre>
+<p><img src="http://upload-images.jianshu.io/upload_images/599584-eb6742e93ff577cd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="nextTick"></p>
+<p>&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#xFF0C;script&#x4E2D;&#x7684;&#x4EE3;&#x7801;&#x5C31;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#x4E86;&#xFF0C;&#x6267;&#x884C;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x9047;&#x5230;&#x4E0D;&#x540C;&#x7684;&#x4EFB;&#x52A1;&#x5206;&#x53D1;&#x5668;&#xFF0C;&#x5C31;&#x5C06;&#x4EFB;&#x52A1;&#x5206;&#x53D1;&#x5230;&#x5404;&#x81EA;&#x5BF9;&#x5E94;&#x7684;&#x961F;&#x5217;&#x4E2D;&#x53BB;&#x3002;&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x5C06;&#x4F1A;&#x6267;&#x884C;&#x6240;&#x6709;&#x7684;&#x5FAE;&#x4EFB;&#x52A1;&#x961F;&#x5217;&#x4E2D;&#x7684;&#x4EFB;&#x52A1;&#x3002;</p>
+<p>&#x5176;&#x4E2D;&#xFF0C;nextTick&#x961F;&#x5217;&#x4F1A;&#x6BD4;Promie&#x5148;&#x6267;&#x884C;&#x3002;nextTick&#x4E2D;&#x7684;&#x53EF;&#x6267;&#x884C;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#x4E4B;&#x540E;&#xFF0C;&#x624D;&#x4F1A;&#x5F00;&#x59CB;&#x6267;&#x884C;Promise&#x961F;&#x5217;&#x4E2D;&#x7684;&#x4EFB;&#x52A1;&#x3002;</p>
+<p>&#x5F53;&#x6240;&#x6709;&#x53EF;&#x6267;&#x884C;&#x7684;&#x5FAE;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#x4E4B;&#x540E;&#xFF0C;&#x8FD9;&#x4E00;&#x8F6E;&#x5FAA;&#x73AF;&#x5C31;&#x8868;&#x793A;&#x7ED3;&#x675F;&#x4E86;&#x3002;&#x4E0B;&#x4E00;&#x8F6E;&#x5FAA;&#x73AF;&#x7EE7;&#x7EED;&#x4ECE;&#x5B8F;&#x4EFB;&#x52A1;&#x961F;&#x5217;&#x5F00;&#x59CB;&#x6267;&#x884C;&#x3002;</p>
+<p>&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#xFF0C;script&#x5DF2;&#x7ECF;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#xFF0C;&#x6240;&#x4EE5;&#x5C31;&#x4ECE;setTimeout&#x961F;&#x5217;&#x5F00;&#x59CB;&#x6267;&#x884C;&#x3002;</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/599584-48cfccebbff92e97.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="&#x7B2C;&#x4E8C;&#x8F6E;&#x5FAA;&#x73AF;&#x521D;&#x59CB;&#x72B6;&#x6001;"></p>
+<p>setTimeout&#x4EFB;&#x52A1;&#x7684;&#x6267;&#x884C;&#xFF0C;&#x4E5F;&#x4F9D;&#x7136;&#x662F;&#x501F;&#x52A9;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x6808;&#x6765;&#x5B8C;&#x6210;&#xFF0C;&#x5E76;&#x4E14;&#x9047;&#x5230;&#x4EFB;&#x52A1;&#x5206;&#x53D1;&#x5668;&#x7684;&#x65F6;&#x5019;&#x4E5F;&#x4F1A;&#x5C06;&#x4EFB;&#x52A1;&#x5206;&#x53D1;&#x5230;&#x5BF9;&#x5E94;&#x7684;&#x961F;&#x5217;&#x4E2D;&#x53BB;&#x3002;</p>
+<p>&#x53EA;&#x6709;&#x5F53;setTimeout&#x4E2D;&#x6240;&#x6709;&#x7684;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#x4E4B;&#x540E;&#xFF0C;&#x624D;&#x4F1A;&#x518D;&#x6B21;&#x5F00;&#x59CB;&#x6267;&#x884C;&#x5FAE;&#x4EFB;&#x52A1;&#x961F;&#x5217;&#x3002;&#x5E76;&#x4E14;&#x6E05;&#x7A7A;&#x6240;&#x6709;&#x7684;&#x53EF;&#x6267;&#x884C;&#x5FAE;&#x4EFB;&#x52A1;&#x3002;</p>
+<p>setTiemout&#x961F;&#x5217;&#x4EA7;&#x751F;&#x7684;&#x5FAE;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#x4E4B;&#x540E;&#xFF0C;&#x5FAA;&#x73AF;&#x5219;&#x56DE;&#x8FC7;&#x5934;&#x6765;&#x5F00;&#x59CB;&#x6267;&#x884C;setImmediate&#x961F;&#x5217;&#x3002;&#x4ECD;&#x7136;&#x662F;&#x5148;&#x5C06;setImmediate&#x961F;&#x5217;&#x4E2D;&#x7684;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#xFF0C;&#x518D;&#x6267;&#x884C;&#x6240;&#x4EA7;&#x751F;&#x7684;&#x5FAE;&#x4EFB;&#x52A1;&#x3002;</p>
+<p>&#x5F53;setImmediate&#x961F;&#x5217;&#x6267;&#x884C;&#x4EA7;&#x751F;&#x7684;&#x5FAE;&#x4EFB;&#x52A1;&#x5168;&#x90E8;&#x6267;&#x884C;&#x4E4B;&#x540E;&#xFF0C;&#x7B2C;&#x4E8C;&#x8F6E;&#x5FAA;&#x73AF;&#x4E5F;&#x5C31;&#x7ED3;&#x675F;&#x4E86;&#x3002;</p>
+<blockquote>
+<p>&#x5927;&#x5BB6;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x8FD9;&#x91CC;&#x7684;&#x5FAA;&#x73AF;&#x7ED3;&#x675F;&#x7684;&#x65F6;&#x95F4;&#x8282;&#x70B9;&#x3002;</p>
+<p>&#x5F53;&#x6211;&#x4EEC;&#x5728;&#x6267;&#x884C;setTimeout&#x4EFB;&#x52A1;&#x4E2D;&#x9047;&#x5230;setTimeout&#x65F6;&#xFF0C;&#x5B83;&#x4ECD;&#x7136;&#x4F1A;&#x5C06;&#x5BF9;&#x5E94;&#x7684;&#x4EFB;&#x52A1;&#x5206;&#x53D1;&#x5230;setTimeout&#x961F;&#x5217;&#x4E2D;&#x53BB;&#xFF0C;&#x4F46;&#x662F;&#x8BE5;&#x4EFB;&#x52A1;&#x5C31;&#x5F97;&#x7B49;&#x5230;&#x4E0B;&#x4E00;&#x8F6E;&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;&#x6267;&#x884C;&#x4E86;&#x3002;&#x4F8B;&#x5B50;&#x4E2D;&#x6CA1;&#x6709;&#x6D89;&#x53CA;&#x5230;&#x8FD9;&#x4E48;&#x590D;&#x6742;&#x7684;&#x5D4C;&#x5957;&#xFF0C;&#x5927;&#x5BB6;&#x53EF;&#x4EE5;&#x52A8;&#x624B;&#x6DFB;&#x52A0;&#x6216;&#x8005;&#x4FEE;&#x6539;&#x4ED6;&#x4EEC;&#x7684;&#x4F4D;&#x7F6E;&#x6765;&#x611F;&#x53D7;&#x4E00;&#x4E0B;&#x5FAA;&#x73AF;&#x7684;&#x53D8;&#x5316;&#x3002;</p>
+</blockquote>
+<p>OK&#xFF0C;&#x5230;&#x8FD9;&#x91CC;&#xFF0C;&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;&#x6211;&#x60F3;&#x6211;&#x5DF2;&#x7ECF;&#x8868;&#x8FF0;&#x5F97;&#x5F88;&#x6E05;&#x695A;&#x4E86;&#xFF0C;&#x80FD;&#x4E0D;&#x80FD;&#x7406;&#x89E3;&#x5C31;&#x770B;&#x8BFB;&#x8005;&#x8001;&#x7237;&#x4EEC;&#x6709;&#x6CA1;&#x6709;&#x8010;&#x5FC3;&#x4E86;&#x3002;&#x6211;&#x4F30;&#x8BA1;&#x5F88;&#x591A;&#x4EBA;&#x4F1A;&#x7406;&#x89E3;&#x4E0D;&#x4E86;&#x5FAA;&#x73AF;&#x7ED3;&#x675F;&#x7684;&#x8282;&#x70B9;&#x3002;</p>
+<p>&#x5F53;&#x7136;&#xFF0C;&#x8FD9;&#x4E9B;&#x987A;&#x5E8F;&#x90FD;&#x662F;v8&#x7684;&#x4E00;&#x4E9B;&#x5B9E;&#x73B0;&#x3002;&#x6211;&#x4EEC;&#x4E5F;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x4E0A;&#x9762;&#x7684;&#x89C4;&#x5219;&#xFF0C;&#x6765;&#x5C1D;&#x8BD5;&#x5B9E;&#x73B0;&#x4E00;&#x4E0B;&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;&#x7684;&#x673A;&#x5236;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// &#x7528;&#x6570;&#x7EC4;&#x6A21;&#x62DF;&#x4E00;&#x4E2A;&#x961F;&#x5217;</span>
+<span class="hljs-keyword">var</span> tasks = [];
+
+<span class="hljs-comment">// &#x6A21;&#x62DF;&#x4E00;&#x4E2A;&#x4E8B;&#x4EF6;&#x5206;&#x53D1;&#x5668;</span>
+<span class="hljs-keyword">var</span> addFn1 = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">task</span>) </span>{
+    tasks.push(task);
+}
+
+<span class="hljs-comment">// &#x6267;&#x884C;&#x6240;&#x6709;&#x7684;&#x4EFB;&#x52A1;</span>
+<span class="hljs-keyword">var</span> flush = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    tasks.map(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">task</span>) </span>{
+        task();
+    })
+}
+
+<span class="hljs-comment">// &#x6700;&#x540E;&#x5229;&#x7528;setTimeout/&#x6216;&#x8005;&#x5176;&#x4ED6;&#x4F60;&#x8BA4;&#x4E3A;&#x5408;&#x9002;&#x7684;&#x65B9;&#x5F0F;&#x4E22;&#x5165;&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;&#x4E2D;</span>
+setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    flush();
+})
+
+<span class="hljs-comment">// &#x5F53;&#x7136;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x4E0D;&#x7528;&#x4E22;&#x8FDB;&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;&#xFF0C;&#x800C;&#x662F;&#x6211;&#x4EEC;&#x81EA;&#x5DF1;&#x624B;&#x52A8;&#x5728;&#x9002;&#x5F53;&#x7684;&#x65F6;&#x673A;&#x53BB;&#x6267;&#x884C;&#x5BF9;&#x5E94;&#x7684;&#x67D0;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;</span>
+
+<span class="hljs-keyword">var</span> dispatch = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">name</span>) </span>{
+    tasks.map(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">item</span>) </span>{
+        <span class="hljs-keyword">if</span>(item.name == name) {
+            item.handler();
+        }
+    })
+}
+
+<span class="hljs-comment">// &#x5F53;&#x7136;&#xFF0C;&#x6211;&#x4EEC;&#x628A;&#x4EFB;&#x52A1;&#x4E22;&#x8FDB;&#x53BB;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x591A;&#x4FDD;&#x5B58;&#x4E00;&#x4E2A;name&#x5373;&#x53EF;&#x3002;</span>
+<span class="hljs-comment">// &#x8FD9;&#x65F6;&#x5019;&#xFF0C;task&#x7684;&#x683C;&#x5F0F;&#x5C31;&#x5982;&#x4E0B;</span>
+demoTask =  {
+    name: <span class="hljs-string">&apos;demo&apos;</span>,
+    handler: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{}
+}
+
+<span class="hljs-comment">// &#x4E8E;&#x662F;&#xFF0C;&#x4E00;&#x4E2A;&#x8BA2;&#x9605;-&#x901A;&#x77E5;&#x7684;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x5C31;&#x8FD9;&#x6837;&#x8F7B;&#x677E;&#x7684;&#x88AB;&#x5B9E;&#x73B0;&#x4E86;</span>
+</code></pre>
+<p>&#x8FD9;&#x6837;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x6A21;&#x62DF;&#x4E86;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#x961F;&#x5217;&#x3002;&#x6211;&#x4EEC;&#x8FD8;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x961F;&#x5217;&#xFF0C;&#x5229;&#x7528;&#x4E0A;&#x9762;&#x7684;&#x5404;&#x79CD;&#x65B9;&#x5F0F;&#x6765;&#x89C4;&#x5B9A;&#x4ED6;&#x4EEC;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x3002;</p>
+<blockquote>
+<p>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x8FD9;&#x91CC;&#x7684;&#x6267;&#x884C;&#x987A;&#x5E8F;&#xFF0C;&#x6216;&#x8005;&#x6267;&#x884C;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x5728;&#x4E0D;&#x540C;&#x7684;&#x573A;&#x666F;&#x91CC;&#x7531;&#x4E8E;&#x5B9E;&#x73B0;&#x7684;&#x4E0D;&#x540C;&#x4F1A;&#x5BFC;&#x81F4;&#x4E0D;&#x540C;&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x5305;&#x62EC;node&#x7684;&#x4E0D;&#x540C;&#x7248;&#x672C;&#xFF0C;&#x4E0D;&#x540C;&#x6D4F;&#x89C8;&#x5668;&#x7B49;&#x90FD;&#x6709;&#x4E0D;&#x540C;&#x7684;&#x7ED3;&#x679C;&#x3002;</p>
+</blockquote>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="shi-yi-3001-qian-xi-jquery.html" class="navigation navigation-prev " aria-label="Previous page: 十一、浅析jQuery">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="shi-san-3001-promise.html" class="navigation navigation-next " aria-label="Next page: 十三、Promise">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"十二、事件循环机制","level":"1.2.12","depth":2,"next":{"title":"十三、Promise","level":"1.2.13","depth":2,"path":"ji-chu-jin-jie-xi-lie/shi-san-3001-promise.md","ref":"ji-chu-jin-jie-xi-lie/shi-san-3001-promise.md","articles":[]},"previous":{"title":"十一、浅析jQuery","level":"1.2.11","depth":2,"path":"ji-chu-jin-jie-xi-lie/shi-yi-3001-qian-xi-jquery.md","ref":"ji-chu-jin-jie-xi-lie/shi-yi-3001-qian-xi-jquery.md","articles":[]},"dir":"ltr"},"config":{"plugins":["codeblock-filename","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"codeblock-filename":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"yangbo","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Sample GitBook","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"这波能反杀":"http://www.chengweiyang.cn"}},"gitbook":"*","description":"This is a sample book created by gitbook","extension":null},"file":{"path":"ji-chu-jin-jie-xi-lie/shi-er-3001-shi-jian-xun-huan-ji-zhi.md","mtime":"2017-12-01T05:13:34.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-12-01T05:24:45.115Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

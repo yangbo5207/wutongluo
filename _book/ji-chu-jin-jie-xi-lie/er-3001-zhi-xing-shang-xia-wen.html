@@ -1,0 +1,577 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>二、执行上下文 · Sample GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="yangbo">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-codeblock-filename/block.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="san-3001-bian-liang-dui-xiang.html" />
+    
+    
+    <link rel="prev" href="yi-3001-nei-cun-kong-jian-xiang-jie.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://www.chengweiyang.cn" target="_blank" class="custom-link">这波能反杀</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../ji-chu-jin-jie-xi-lie.html">
+            
+                <a href="../ji-chu-jin-jie-xi-lie.html">
+            
+                    
+                    基础进阶系列
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="yi-3001-nei-cun-kong-jian-xiang-jie.html">
+            
+                <a href="yi-3001-nei-cun-kong-jian-xiang-jie.html">
+            
+                    
+                    一、内存空间详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.2" data-path="er-3001-zhi-xing-shang-xia-wen.html">
+            
+                <a href="er-3001-zhi-xing-shang-xia-wen.html">
+            
+                    
+                    二、执行上下文
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="san-3001-bian-liang-dui-xiang.html">
+            
+                <a href="san-3001-bian-liang-dui-xiang.html">
+            
+                    
+                    三、变量对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="si-3001-zuo-yong-yu-lian-yu-bi-bao.html">
+            
+                <a href="si-3001-zuo-yong-yu-lian-yu-bi-bao.html">
+            
+                    
+                    四、作用域链与闭包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" >
+            
+                <span>
+            
+                    
+                    五、this
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="liu-3001-zai-chrome-zhong-guan-cha-han-shu-diao-yong-zhan-3001-zuo-yong-yu-lian-3001-bi-bao.html">
+            
+                <a href="liu-3001-zai-chrome-zhong-guan-cha-han-shu-diao-yong-zhan-3001-zuo-yong-yu-lian-3001-bi-bao.html">
+            
+                    
+                    六、在chrome中观察函数调用栈、作用域链、闭包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="qi-3001-han-shu-yu-han-shu-shi-bian-cheng.html">
+            
+                <a href="qi-3001-han-shu-yu-han-shu-shi-bian-cheng.html">
+            
+                    
+                    七、函数与函数式编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="ba-3001-ke-li-hua.html">
+            
+                <a href="ba-3001-ke-li-hua.html">
+            
+                    
+                    八、柯里化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="jiu-3001-mian-xiang-dui-xiang.html">
+            
+                <a href="jiu-3001-mian-xiang-dui-xiang.html">
+            
+                    
+                    九、面向对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="shi-3001-mian-xiang-dui-xiang-shi-zhan-zhi-tuo-ye-dui-xiang-feng-zhuang.html">
+            
+                <a href="shi-3001-mian-xiang-dui-xiang-shi-zhan-zhi-tuo-ye-dui-xiang-feng-zhuang.html">
+            
+                    
+                    十、面向对象实战之拖拽对象封装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="shi-yi-3001-qian-xi-jquery.html">
+            
+                <a href="shi-yi-3001-qian-xi-jquery.html">
+            
+                    
+                    十一、浅析jQuery
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="shi-er-3001-shi-jian-xun-huan-ji-zhi.html">
+            
+                <a href="shi-er-3001-shi-jian-xun-huan-ji-zhi.html">
+            
+                    
+                    十二、事件循环机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" data-path="shi-san-3001-promise.html">
+            
+                <a href="shi-san-3001-promise.html">
+            
+                    
+                    十三、Promise
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" data-path="shi-si-3001-es6-chang-yong-zhi-shi-he-ji.html">
+            
+                <a href="shi-si-3001-es6-chang-yong-zhi-shi-he-ji.html">
+            
+                    
+                    十四、ES6常用知识合集
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.15" data-path="shi-wu-3001-xiang-jie-es6-modules.html">
+            
+                <a href="shi-wu-3001-xiang-jie-es6-modules.html">
+            
+                    
+                    十五、详解ES6 Modules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.16" data-path="fu-jian-1-settimeout-yu-bi-bao.html">
+            
+                <a href="fu-jian-1-settimeout-yu-bi-bao.html">
+            
+                    
+                    附件1：setTimeout与闭包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.17" data-path="fu-jian-2-async-await.html">
+            
+                <a href="fu-jian-2-async-await.html">
+            
+                    
+                    附件2：async/await
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >二、执行上下文</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p><img src="http://upload-images.jianshu.io/upload_images/599584-58d31e5b80737ca0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="&#x5148;&#x968F;&#x4FBF;&#x653E;&#x5F20;&#x56FE;">
+&#x6211;&#x4EEC;&#x5728;JS&#x5B66;&#x4E60;&#x521D;&#x671F;&#x6216;&#x8005;&#x9762;&#x8BD5;&#x7684;&#x65F6;&#x5019;&#x5E38;&#x5E38;&#x4F1A;&#x9047;&#x5230;&#x8003;&#x6838;&#x53D8;&#x91CF;&#x63D0;&#x5347;&#x7684;&#x601D;&#x8003;&#x9898;&#x3002;&#x6BD4;&#x5982;&#x5148;&#x6765;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x4E00;&#x70B9;&#x7684;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-built_in">console</span>.log(a);   <span class="hljs-comment">// &#x8FD9;&#x91CC;&#x4F1A;&#x6253;&#x5370;&#x51FA;&#x4EC0;&#x4E48;&#xFF1F;</span>
+<span class="hljs-keyword">var</span> a = <span class="hljs-number">20</span>;
+</code></pre>
+<p>&#x6682;&#x65F6;&#x5148;&#x4E0D;&#x7BA1;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#xFF0C;&#x6211;&#x4EEC;&#x5148;&#x5F15;&#x5165;&#x4E00;&#x4E2A;JavaScript&#x4E2D;&#x6700;&#x57FA;&#x7840;&#xFF0C;&#x4F46;&#x540C;&#x65F6;&#x4E5F;&#x662F;&#x6700;&#x91CD;&#x8981;&#x7684;&#x4E00;&#x4E2A;&#x6982;&#x5FF5;<strong>&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#xFF08;Execution Context&#xFF09;</strong>&#x3002;</p>
+<p>&#x6BCF;&#x6B21;&#x5F53;&#x63A7;&#x5236;&#x5668;&#x8F6C;&#x5230;&#x53EF;&#x6267;&#x884C;&#x4EE3;&#x7801;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5C31;&#x4F1A;&#x8FDB;&#x5165;&#x4E00;&#x4E2A;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#x3002;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A;&#x5F53;&#x524D;&#x4EE3;&#x7801;&#x7684;&#x6267;&#x884C;&#x73AF;&#x5883;&#xFF0C;&#x5B83;&#x4F1A;&#x5F62;&#x6210;&#x4E00;&#x4E2A;&#x4F5C;&#x7528;&#x57DF;&#x3002;JavaScript&#x4E2D;&#x7684;&#x8FD0;&#x884C;&#x73AF;&#x5883;&#x5927;&#x6982;&#x5305;&#x62EC;&#x4E09;&#x79CD;&#x60C5;&#x51B5;&#x3002;</p>
+<ul>
+<li>&#x5168;&#x5C40;&#x73AF;&#x5883;&#xFF1A;JavaScript&#x4EE3;&#x7801;&#x8FD0;&#x884C;&#x8D77;&#x6765;&#x4F1A;&#x9996;&#x5148;&#x8FDB;&#x5165;&#x8BE5;&#x73AF;&#x5883;</li>
+<li>&#x51FD;&#x6570;&#x73AF;&#x5883;&#xFF1A;&#x5F53;&#x51FD;&#x6570;&#x88AB;&#x8C03;&#x7528;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x4F1A;&#x8FDB;&#x5165;&#x5F53;&#x524D;&#x51FD;&#x6570;&#x4E2D;&#x6267;&#x884C;&#x4EE3;&#x7801;</li>
+<li>eval&#xFF08;&#x4E0D;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#xFF0C;&#x53EF;&#x5FFD;&#x7565;&#xFF09;</li>
+</ul>
+<p>&#x56E0;&#x6B64;&#x5728;&#x4E00;&#x4E2A;JavaScript&#x7A0B;&#x5E8F;&#x4E2D;&#xFF0C;&#x5FC5;&#x5B9A;&#x4F1A;&#x4EA7;&#x751F;&#x591A;&#x4E2A;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#xFF0C;&#x5728;&#x6211;&#x7684;&#x4E0A;&#x4E00;&#x7BC7;&#x6587;&#x7AE0;&#x4E2D;&#x4E5F;&#x6709;&#x63D0;&#x5230;&#xFF0C;JavaScript&#x5F15;&#x64CE;&#x4F1A;&#x4EE5;&#x6808;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x5904;&#x7406;&#x5B83;&#x4EEC;&#xFF0C;&#x8FD9;&#x4E2A;&#x6808;&#xFF0C;&#x6211;&#x4EEC;&#x79F0;&#x5176;&#x4E3A;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x6808;(call stack)&#x3002;&#x6808;&#x5E95;&#x6C38;&#x8FDC;&#x90FD;&#x662F;&#x5168;&#x5C40;&#x4E0A;&#x4E0B;&#x6587;&#xFF0C;&#x800C;&#x6808;&#x9876;&#x5C31;&#x662F;&#x5F53;&#x524D;&#x6B63;&#x5728;&#x6267;&#x884C;&#x7684;&#x4E0A;&#x4E0B;&#x6587;&#x3002;</p>
+<p>&#x5F53;&#x4EE3;&#x7801;&#x5728;&#x6267;&#x884C;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x9047;&#x5230;&#x4EE5;&#x4E0A;&#x4E09;&#x79CD;&#x60C5;&#x51B5;&#xFF0C;&#x90FD;&#x4F1A;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#xFF0C;&#x653E;&#x5165;&#x6808;&#x4E2D;&#xFF0C;&#x800C;&#x5904;&#x4E8E;&#x6808;&#x9876;&#x7684;&#x4E0A;&#x4E0B;&#x6587;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#x4E4B;&#x540E;&#xFF0C;&#x5C31;&#x4F1A;&#x81EA;&#x52A8;&#x51FA;&#x6808;&#x3002;&#x4E3A;&#x4E86;&#x66F4;&#x52A0;&#x6E05;&#x6670;&#x7684;&#x7406;&#x89E3;&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#xFF0C;&#x6839;&#x636E;&#x4E0B;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#xFF0C;&#x7ED3;&#x5408;&#x56FE;&#x793A;&#x7ED9;&#x5927;&#x5BB6;&#x5C55;&#x793A;&#x3002;</p>
+<blockquote>
+<p>&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A;&#x51FD;&#x6570;&#x6267;&#x884C;&#x7684;&#x73AF;&#x5883;&#xFF0C;&#x6BCF;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x90FD;&#x4F1A;&#x7ED9;&#x5BF9;&#x5E94;&#x7684;&#x51FD;&#x6570;&#x521B;&#x5EFA;&#x8FD9;&#x6837;&#x4E00;&#x4E2A;&#x6267;&#x884C;&#x73AF;&#x5883;&#x3002;</p>
+</blockquote>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> color = <span class="hljs-string">&apos;blue&apos;</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">changeColor</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> anotherColor = <span class="hljs-string">&apos;red&apos;</span>;
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">swapColors</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">var</span> tempColor = anotherColor;
+        anotherColor = color;
+        color = tempColor;
+    }
+
+    swapColors();
+}
+
+changeColor();
+</code></pre>
+<p>&#x6211;&#x4EEC;&#x7528;ECStack&#x6765;&#x8868;&#x793A;&#x5904;&#x7406;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#x7EC4;&#x7684;&#x5806;&#x6808;&#x3002;&#x6211;&#x4EEC;&#x5F88;&#x5BB9;&#x6613;&#x77E5;&#x9053;&#xFF0C;&#x7B2C;&#x4E00;&#x6B65;&#xFF0C;&#x9996;&#x5148;&#x662F;&#x5168;&#x5C40;&#x4E0A;&#x4E0B;&#x6587;&#x5165;&#x6808;&#x3002;</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/599584-bb2d5907b658c456.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="&#x7B2C;&#x4E00;&#x6B65;&#xFF1A;&#x5168;&#x5C40;&#x4E0A;&#x4E0B;&#x6587;&#x5165;&#x6808;"></p>
+<p>&#x5168;&#x5C40;&#x4E0A;&#x4E0B;&#x6587;&#x5165;&#x6808;&#x4E4B;&#x540E;&#xFF0C;&#x5176;&#x4E2D;&#x7684;&#x53EF;&#x6267;&#x884C;&#x4EE3;&#x7801;&#x5F00;&#x59CB;&#x6267;&#x884C;&#xFF0C;&#x76F4;&#x5230;&#x9047;&#x5230;&#x4E86;<code>changeColor()</code>&#xFF0C;&#x8FD9;&#x4E00;&#x53E5;&#x6FC0;&#x6D3B;&#x51FD;&#x6570;<code>changeColor</code>&#x521B;&#x5EFA;&#x5B83;&#x81EA;&#x5DF1;&#x7684;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#xFF0C;&#x56E0;&#x6B64;&#x7B2C;&#x4E8C;&#x6B65;&#x5C31;&#x662F;changeColor&#x7684;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#x5165;&#x6808;&#x3002;</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/599584-bbc841d4908c05cb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="&#x7B2C;&#x4E8C;&#x6B65;&#xFF1A;changeColor&#x7684;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#x5165;&#x6808;"></p>
+<p>changeColor&#x7684;&#x4E0A;&#x4E0B;&#x6587;&#x5165;&#x6808;&#x4E4B;&#x540E;&#xFF0C;&#x63A7;&#x5236;&#x5668;&#x5F00;&#x59CB;&#x6267;&#x884C;&#x5176;&#x4E2D;&#x7684;&#x53EF;&#x6267;&#x884C;&#x4EE3;&#x7801;&#xFF0C;&#x9047;&#x5230;<code>swapColors()</code>&#x4E4B;&#x540E;&#x53C8;&#x6FC0;&#x6D3B;&#x4E86;&#x4E00;&#x4E2A;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#x3002;&#x56E0;&#x6B64;&#x7B2C;&#x4E09;&#x6B65;&#x662F;swapColors&#x7684;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#x5165;&#x6808;&#x3002;</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/599584-8bc0424ffcb2507b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="&#x7B2C;&#x4E09;&#x6B65;&#xFF1A;swapColors&#x7684;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#x5165;&#x6808;"></p>
+<p>&#x5728;swapColors&#x7684;&#x53EF;&#x6267;&#x884C;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;&#x518D;&#x6CA1;&#x6709;&#x9047;&#x5230;&#x5176;&#x4ED6;&#x80FD;&#x751F;&#x6210;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x56E0;&#x6B64;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x987A;&#x5229;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#xFF0C;swapColors&#x7684;&#x4E0A;&#x4E0B;&#x6587;&#x4ECE;&#x6808;&#x4E2D;&#x5F39;&#x51FA;&#x3002;</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/599584-bbc841d4908c05cb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="&#x7B2C;&#x56DB;&#x6B65;&#xFF1A;swapColors&#x7684;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#x51FA;&#x6808;"></p>
+<p>swapColors&#x7684;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#x5F39;&#x51FA;&#x4E4B;&#x540E;&#xFF0C;&#x7EE7;&#x7EED;&#x6267;&#x884C;changeColor&#x7684;&#x53EF;&#x6267;&#x884C;&#x4EE3;&#x7801;&#xFF0C;&#x4E5F;&#x6CA1;&#x6709;&#x518D;&#x9047;&#x5230;&#x5176;&#x4ED6;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#xFF0C;&#x987A;&#x5229;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#x4E4B;&#x540E;&#x5F39;&#x51FA;&#x3002;&#x8FD9;&#x6837;&#xFF0C;ECStack&#x4E2D;&#x5C31;&#x53EA;&#x8EAB;&#x4E0B;&#x5168;&#x5C40;&#x4E0A;&#x4E0B;&#x6587;&#x4E86;&#x3002;</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/599584-bb2d5907b658c456.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="&#x7B2C;&#x4E94;&#x6B65;&#xFF1A;changeColor&#x7684;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#x51FA;&#x6808;"></p>
+<p>&#x5168;&#x5C40;&#x4E0A;&#x4E0B;&#x6587;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x7A97;&#x53E3;&#x5173;&#x95ED;&#x540E;&#x51FA;&#x6808;&#x3002;</p>
+<blockquote>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x51FD;&#x6570;&#x4E2D;&#xFF0C;&#x9047;&#x5230;return&#x80FD;&#x76F4;&#x63A5;&#x7EC8;&#x6B62;&#x53EF;&#x6267;&#x884C;&#x4EE3;&#x7801;&#x7684;&#x6267;&#x884C;&#xFF0C;&#x56E0;&#x6B64;&#x4F1A;&#x76F4;&#x63A5;&#x5C06;&#x5F53;&#x524D;&#x4E0A;&#x4E0B;&#x6587;&#x5F39;&#x51FA;&#x6808;&#x3002;</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/599584-58d31e5b80737ca0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="&#x6574;&#x4E2A;&#x8FC7;&#x7A0B;"></p>
+<p>&#x8BE6;&#x7EC6;&#x4E86;&#x89E3;&#x4E86;&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#x4E4B;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x5BF9;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#x603B;&#x7ED3;&#x4E00;&#x4E9B;&#x7ED3;&#x8BBA;&#x4E86;&#x3002;</p>
+<ul>
+<li>&#x5355;&#x7EBF;&#x7A0B;</li>
+<li>&#x540C;&#x6B65;&#x6267;&#x884C;&#xFF0C;&#x53EA;&#x6709;&#x6808;&#x9876;&#x7684;&#x4E0A;&#x4E0B;&#x6587;&#x5904;&#x4E8E;&#x6267;&#x884C;&#x4E2D;&#xFF0C;&#x5176;&#x4ED6;&#x4E0A;&#x4E0B;&#x6587;&#x9700;&#x8981;&#x7B49;&#x5F85;</li>
+<li>&#x5168;&#x5C40;&#x4E0A;&#x4E0B;&#x6587;&#x53EA;&#x6709;&#x552F;&#x4E00;&#x7684;&#x4E00;&#x4E2A;&#xFF0C;&#x5B83;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x5173;&#x95ED;&#x65F6;&#x51FA;&#x6808;</li>
+<li>&#x51FD;&#x6570;&#x7684;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#x7684;&#x4E2A;&#x6570;&#x6CA1;&#x6709;&#x9650;&#x5236;</li>
+<li>&#x6BCF;&#x6B21;&#x67D0;&#x4E2A;&#x51FD;&#x6570;&#x88AB;&#x8C03;&#x7528;&#xFF0C;&#x5C31;&#x4F1A;&#x6709;&#x4E2A;&#x65B0;&#x7684;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#x4E3A;&#x5176;&#x521B;&#x5EFA;&#xFF0C;&#x5373;&#x4F7F;&#x662F;&#x8C03;&#x7528;&#x7684;&#x81EA;&#x8EAB;&#x51FD;&#x6570;&#xFF0C;&#x4E5F;&#x662F;&#x5982;&#x6B64;&#x3002;</li>
+</ul>
+<p>&#x4E3A;&#x4E86;&#x5DE9;&#x56FA;&#x4E00;&#x4E0B;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#x7684;&#x7406;&#x89E3;&#xFF0C;&#x6211;&#x4EEC;&#x518D;&#x6765;&#x7ED8;&#x5236;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#x7684;&#x6F14;&#x53D8;&#x8FC7;&#x7A0B;&#xFF0C;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x95ED;&#x5305;&#x4F8B;&#x5B50;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">f1</span>(<span class="hljs-params"></span>)</span>{
+    <span class="hljs-keyword">var</span> n=<span class="hljs-number">999</span>;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">f2</span>(<span class="hljs-params"></span>)</span>{
+        alert(n);
+    }
+    <span class="hljs-keyword">return</span> f2;
+}
+<span class="hljs-keyword">var</span> result=f1();
+result(); <span class="hljs-comment">// 999</span>
+</code></pre>
+<p>&#x56E0;&#x4E3A;f1&#x4E2D;&#x7684;&#x51FD;&#x6570;f2&#x5728;f1&#x7684;&#x53EF;&#x6267;&#x884C;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;&#x5E76;&#x6CA1;&#x6709;&#x88AB;&#x8C03;&#x7528;&#x6267;&#x884C;&#xFF0C;&#x56E0;&#x6B64;&#x6267;&#x884C;f1&#x65F6;&#xFF0C;f2&#x4E0D;&#x4F1A;&#x521B;&#x5EFA;&#x65B0;&#x7684;&#x4E0A;&#x4E0B;&#x6587;&#xFF0C;&#x800C;&#x76F4;&#x5230;result&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x624D;&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x3002;&#x5177;&#x4F53;&#x6F14;&#x53D8;&#x8FC7;&#x7A0B;&#x5982;&#x4E0B;&#x3002;</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/599584-bb9829780f50c07e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="&#x4E0A;&#x4F8B;&#x6F14;&#x53D8;&#x8FC7;&#x7A0B;"></p>
+<blockquote>
+<p>&#x5982;&#x679C;&#x4F60;&#x5728;&#x67D0;&#x516C;&#x4F17;&#x53F7;&#x770B;&#x5230;&#x6211;&#x7684;&#x6587;&#x7AE0;&#xFF0C;&#x7136;&#x540E;&#x53D1;&#x73B0;&#x4E0B;&#x9762;&#x7684;&#x8BC4;&#x8BBA;&#x8BF4;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#x9519;&#x4E86;&#xFF0C;&#x8BF7;&#x4E0D;&#x8981;&#x7BA1;&#x4ED6;&#x4EEC;&#xFF0C;&#x4ED6;&#x4EEC;&#x628A;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x6808;&#x548C;&#x4F5C;&#x7528;&#x57DF;&#x94FE;&#x6CA1;&#x6709;&#x5206;&#x6E05;&#x695A;&#x5C31;&#x8DD1;&#x51FA;&#x6765;&#x8D28;&#x7591;&#xFF0C;&#x771F;&#x7684;&#x5F88;&#x6709;&#x95EE;&#x9898;&#x3002;&#x5EFA;&#x8BAE;&#x5927;&#x5BB6;&#x8BFB;&#x4E00;&#x8BFB;&#x8FD9;&#x7CFB;&#x5217;&#x7684;&#x7B2C;&#x516D;&#x7BC7;&#x6587;&#x7AE0;&#xFF0C;&#x6559;&#x4F60;&#x5982;&#x4F55;&#x81EA;&#x5DF1;&#x62E5;&#x6709;&#x5224;&#x65AD;&#x5BF9;&#x9519;&#x7684;&#x80FD;&#x529B;&#x3002;</p>
+</blockquote>
+<p>&#x6700;&#x540E;&#x7559;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x4F8B;&#x5B50;&#xFF0C;&#x5927;&#x5BB6;&#x53EF;&#x4EE5;&#x81EA;&#x5DF1;&#x8111;&#x8865;&#x4E00;&#x4E0B;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x5728;&#x6267;&#x884C;&#x8FC7;&#x7A0B;&#x4E2D;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#x7684;&#x53D8;&#x5316;&#x60C5;&#x51B5;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> name = <span class="hljs-string">&quot;window&quot;</span>;
+
+<span class="hljs-keyword">var</span> p = {
+  name: <span class="hljs-string">&apos;Perter&apos;</span>,
+  getName: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+
+    <span class="hljs-comment">// &#x5229;&#x7528;&#x53D8;&#x91CF;&#x4FDD;&#x5B58;&#x7684;&#x65B9;&#x5F0F;&#x4FDD;&#x8BC1;&#x5176;&#x8BBF;&#x95EE;&#x7684;&#x662F;p&#x5BF9;&#x8C61;</span>
+    <span class="hljs-keyword">var</span> self = <span class="hljs-keyword">this</span>;
+    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+      <span class="hljs-keyword">return</span> self.name;
+    }
+  }
+}
+
+<span class="hljs-keyword">var</span> getName = p.getName();
+<span class="hljs-keyword">var</span> _name = getName();
+<span class="hljs-built_in">console</span>.log(_name);
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="yi-3001-nei-cun-kong-jian-xiang-jie.html" class="navigation navigation-prev " aria-label="Previous page: 一、内存空间详解">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="san-3001-bian-liang-dui-xiang.html" class="navigation navigation-next " aria-label="Next page: 三、变量对象">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"二、执行上下文","level":"1.2.2","depth":2,"next":{"title":"三、变量对象","level":"1.2.3","depth":2,"path":"ji-chu-jin-jie-xi-lie/san-3001-bian-liang-dui-xiang.md","ref":"ji-chu-jin-jie-xi-lie/san-3001-bian-liang-dui-xiang.md","articles":[]},"previous":{"title":"一、内存空间详解","level":"1.2.1","depth":2,"path":"ji-chu-jin-jie-xi-lie/yi-3001-nei-cun-kong-jian-xiang-jie.md","ref":"ji-chu-jin-jie-xi-lie/yi-3001-nei-cun-kong-jian-xiang-jie.md","articles":[]},"dir":"ltr"},"config":{"plugins":["codeblock-filename","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"codeblock-filename":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"yangbo","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Sample GitBook","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"这波能反杀":"http://www.chengweiyang.cn"}},"gitbook":"*","description":"This is a sample book created by gitbook","extension":null},"file":{"path":"ji-chu-jin-jie-xi-lie/er-3001-zhi-xing-shang-xia-wen.md","mtime":"2017-12-01T03:49:26.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-12-01T05:24:45.115Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
