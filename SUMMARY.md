@@ -12,4 +12,5 @@
   * [八、柯里化](ji-chu-jin-jie-xi-lie/ba-3001-ke-li-hua.md)
   * [九、面向对象](ji-chu-jin-jie-xi-lie/jiu-3001-mian-xiang-dui-xiang.md)
   * [十、面向对象实战之拖拽对象封装](ji-chu-jin-jie-xi-lie/shi-3001-mian-xiang-dui-xiang-shi-zhan-zhi-tuo-ye-dui-xiang-feng-zhuang.md)
+  * [十一、浅析jQuery](ji-chu-jin-jie-xi-lie/shi-yi-3001-qian-xi-jquery.md)
 
