@@ -1,5 +1,3 @@
-![配图与本文无关](http://upload-images.jianshu.io/upload_images/599584-4c8b459423d7fc74.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
 我在[详细图解作用域链与闭包](http://www.jianshu.com/p/21a16d44f150)一文中的结尾留下了一个关于setTimeout与循环闭包的思考题。
 
 > 利用闭包，修改下面的代码，让循环输出的结果依次为1， 2， 3， 4， 5
@@ -139,9 +137,3 @@ for (var i=1; i<=5; i++) {
     })(i), i*1000 );
 }
 ```
-
-[前端基础进阶系列目录](http://www.jianshu.com/p/cd3fee40ef59)
-
-前端基础进阶系列我会持续更新，欢迎大家来简书关注我。也欢迎大家关注我公众号（可在简书个人简介中查看），新的文章更新了我会在公众号里第一时间通知大家。
-
-> 我已委托“维权骑士”（rightknights.com）为我的文章进行维权行动。未经允许，请勿转载，谢谢合作。
