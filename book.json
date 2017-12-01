@@ -16,7 +16,12 @@
         }
     },
     "output": "doc",
-    "plugins": [ "codeblock-filename" ],
+    "plugins": [ "codeblock-filename", "disqus" ],
+    "pluginsConfig": {
+        "disqus": {
+            "shortName": "yangbo5207"
+        }
+    },
     "title": "Sample GitBook",
     "variables": {}
 }
