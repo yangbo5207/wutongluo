@@ -10,4 +10,5 @@
   * [六、在chrome中观察函数调用栈、作用域链、闭包](ji-chu-jin-jie-xi-lie/liu-3001-zai-chrome-zhong-guan-cha-han-shu-diao-yong-zhan-3001-zuo-yong-yu-lian-3001-bi-bao.md)
   * [七、函数与函数式编程](ji-chu-jin-jie-xi-lie/qi-3001-han-shu-yu-han-shu-shi-bian-cheng.md)
   * [八、柯里化](ji-chu-jin-jie-xi-lie/ba-3001-ke-li-hua.md)
+  * [九、面向对象](ji-chu-jin-jie-xi-lie/jiu-3001-mian-xiang-dui-xiang.md)
 
