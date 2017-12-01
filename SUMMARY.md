@@ -14,4 +14,5 @@
   * [十、面向对象实战之拖拽对象封装](ji-chu-jin-jie-xi-lie/shi-3001-mian-xiang-dui-xiang-shi-zhan-zhi-tuo-ye-dui-xiang-feng-zhuang.md)
   * [十一、浅析jQuery](ji-chu-jin-jie-xi-lie/shi-yi-3001-qian-xi-jquery.md)
   * [十二、事件循环机制](ji-chu-jin-jie-xi-lie/shi-er-3001-shi-jian-xun-huan-ji-zhi.md)
+  * [十三、Promise](ji-chu-jin-jie-xi-lie/shi-san-3001-promise.md)
 
