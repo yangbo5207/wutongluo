@@ -17,4 +17,5 @@
   * [十三、Promise](ji-chu-jin-jie-xi-lie/shi-san-3001-promise.md)
   * [十四、ES6常用知识合集](ji-chu-jin-jie-xi-lie/shi-si-3001-es6-chang-yong-zhi-shi-he-ji.md)
   * [十五、详解ES6 Modules](ji-chu-jin-jie-xi-lie/shi-wu-3001-xiang-jie-es6-modules.md)
+  * 附件1：setTimeout与闭包
 
