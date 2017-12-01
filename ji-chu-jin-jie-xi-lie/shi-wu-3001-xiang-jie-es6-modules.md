@@ -10,33 +10,31 @@
 
 通常安装的方式就是去node的官方网站下载安装，在安装node的时候，npm也会一起被安装。
 
-下载地址： http://nodejs.cn/download/
+下载地址： [http://nodejs.cn/download/](http://nodejs.cn/download/)
 
 ##### 2、安装一个好用的命令行工具
 
 在windows环境下，系统默认的cmd非常难用，所以我个人比较推荐大家使用git.bash 或者 cmder。
 
-git 下载地址： https://git-scm.com/downloads
+git 下载地址： [https://git-scm.com/downloads](https://git-scm.com/downloads)  
 在git安装目录下会有一个bash工具，找到安装目录直接使用即可。
 
-cmder下载地址： http://cmder.net/
+cmder下载地址： [http://cmder.net/](http://cmder.net/)
 
 在mac上就方便很多了，你可以直接使用系统自带的terminal工具，就非常好用。但是一般我推荐大家使用iterm2，并安装oh my zsh插件。具体的配置大家可以自己去折腾，网上的教程应该足够帮助你搞定这一切了。
 
-+ iterm2 下载地址 http://www.iterm2.com/downloads.html
-+ oh my zsh 主题选择 https://github.com/robbyrussell/oh-my-zsh/wiki/External-themes
+* iterm2 下载地址 [http://www.iterm2.com/downloads.html](http://www.iterm2.com/downloads.html)
+* oh my zsh 主题选择 [https://github.com/robbyrussell/oh-my-zsh/wiki/External-themes](https://github.com/robbyrussell/oh-my-zsh/wiki/External-themes)
 
-
-![](http://upload-images.jianshu.io/upload_images/599584-76079222df7b34f7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](http://upload-images.jianshu.io/upload_images/599584-76079222df7b34f7.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
 
 另外还强烈推荐一款超高颜值的终端工具 `hyperTerm`。
 
 这款工具的特色就是颜值高，第一感觉就是惊艳，大家不妨一试。
 
+![](http://upload-images.jianshu.io/upload_images/599584-6e8534894dfb4e4d.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
 
-![](http://upload-images.jianshu.io/upload_images/599584-6e8534894dfb4e4d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
-+ hyperTerm 下载地址 https://hyper.is/
+* hyperTerm 下载地址 [https://hyper.is/](https://hyper.is/)
 
 ##### 3、安装create-react-app
 
@@ -68,8 +66,7 @@ create-react-app会自动帮助我们在develop目录下创建一个叫做es6app
 
 当项目创建完成之后，在命令行工具中，我们会看到如图所示的提示。这些提示告诉了我们如何运行项目`npm start` ，如何打包项目`npm run build`等，这里我就不再赘述。
 
-![](http://upload-images.jianshu.io/upload_images/599584-368f0d2ad8cafb5c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
+![](http://upload-images.jianshu.io/upload_images/599584-368f0d2ad8cafb5c.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
 
 项目创建完毕之后，进入该文件夹。
 
@@ -92,11 +89,11 @@ create-react-app会自动帮助我们在develop目录下创建一个叫做es6app
 > npm start
 ```
 
-![项目启动之后](http://upload-images.jianshu.io/upload_images/599584-105e41643f770f96.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![项目启动之后](http://upload-images.jianshu.io/upload_images/599584-105e41643f770f96.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
 
 一般来说，启动之后会自动在浏览器中打开。
 
-![项目首次启动的页面](http://upload-images.jianshu.io/upload_images/599584-f91ae7637fa70ed9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![项目首次启动的页面](http://upload-images.jianshu.io/upload_images/599584-f91ae7637fa70ed9.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
 
 > `create-react-app`已经自动帮助我们实现了热更新，因此当我们修改代码时，浏览器会自动更新。当然，如果我们仅仅只是修改页面样式时，热更新将会非常方便，但是如果你正在进行单页面的组件开发，可能热更新能够提供的帮助非常有限。
 
@@ -106,14 +103,14 @@ create-react-app会自动帮助我们在develop目录下创建一个叫做es6app
 
 初次创建的项目下，会有3个文件夹。
 
-+ node_modules  
-项目依赖包存放位置。当我们运行`npm install`安装`package.json`中的依赖包时，该文件夹会自动创建，所有的依赖包会安装到该文件夹里。
+* node\_modules  
+  项目依赖包存放位置。当我们运行`npm install`安装`package.json`中的依赖包时，该文件夹会自动创建，所有的依赖包会安装到该文件夹里。
 
-+ public
-主要的作用是html入口文件的存放。当然我们也可以存放其他公用的静态资源，如图片，css等。其中的`index.html`就是我们项目的入口html文件
+* public  
+  主要的作用是html入口文件的存放。当然我们也可以存放其他公用的静态资源，如图片，css等。其中的`index.html`就是我们项目的入口html文件
 
-+ src
-组件的存放目录。在create-react-app创建的项目中，每一个单独的文件都可以被看成一个单独的模块，单独的image，单独的css，单独js等，而所有的组件都存放于src目录中，其中`index.js`则是js的入口文件。虽然我们并没有在`index.html`中使用script标签引入他，但是他的作用就和此一样。
+* src  
+  组件的存放目录。在create-react-app创建的项目中，每一个单独的文件都可以被看成一个单独的模块，单独的image，单独的css，单独js等，而所有的组件都存放于src目录中，其中`index.js`则是js的入口文件。虽然我们并没有在`index.html`中使用script标签引入他，但是他的作用就和此一样。
 
 当然，如果我们要进一步进行react的学习，那么肯定需要了解多一点的规则，但是在学习react之前，我们还是先把ES6 modules的知识搞定在说吧，所以，接下来你要做的事情就是，删掉src目录里的除了index.js之外的所有文件，并清空index.js，我们从0开始学习ES6 modules。
 
@@ -124,8 +121,7 @@ const app = document.querySelector('#root')
 app.innerHTML = '啊，全部被清空啦，准备工作终于做完了，可以开始学习ES6啦'
 ```
 
-
-![一切正常，程序变得普通了，我们更容易理解](http://upload-images.jianshu.io/upload_images/599584-2524e23338728b89.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![一切正常，程序变得普通了，我们更容易理解](http://upload-images.jianshu.io/upload_images/599584-2524e23338728b89.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
 
 那么我们就可以在这个环境下学习ES6的所有知识了，当然也包括ES6 modules。
 
@@ -148,12 +144,13 @@ import test from './test'
 
 console.log(test);
 ```
-+ `import`表示引入一个模块，
-+ test 我们暂时理解为引入模块的名字，
-+ from表示从哪里引入
-+ `./test`为`./test.js`的简写，表示将要引入模块的路径
 
-![结果是test中的代码执行，index.js中模块test为一个空对象](http://upload-images.jianshu.io/upload_images/599584-258a86fe0e06b5f9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+* `import`表示引入一个模块，
+* test 我们暂时理解为引入模块的名字，
+* from表示从哪里引入
+* `./test`为`./test.js`的简写，表示将要引入模块的路径
+
+![结果是test中的代码执行，index.js中模块test为一个空对象](http://upload-images.jianshu.io/upload_images/599584-258a86fe0e06b5f9.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
 
 引入这个动作执行时，test.js中的代码也执行了。由于在`test.js`中并没有对外暴露任何接口，因此`index.js`中的`test`为一个空对象，那么对外暴露接口的方式，则是我们要学习的第二个语法。
 
@@ -183,7 +180,7 @@ export default {
 }
 ```
 
-![运行结果](http://upload-images.jianshu.io/upload_images/599584-783481a63855b461.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![运行结果](http://upload-images.jianshu.io/upload_images/599584-783481a63855b461.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
 
 在`test.js`中，我们使用`export default`对包暴露了一个对象。他的意思就是当我们使用`import test from './test'`时，这个test对象就默认等于`export default`暴露的对象。
 
@@ -201,9 +198,10 @@ export const zcar = 12345;
 // src/index.js
 import * as test from './test';
 ```
+
 其中的 `*` 表示所有，这是比较常用的通配符，as表示别名，`* as test`的意思是将test.js暴露的所有接口组成的对象，命名为test。那么我们在index.js中log出test，结果就如下。
 
-![看到结果，我们就很容易清楚的知道export与export default的区别与作用了，并且如何使用他们就变得很简单了](http://upload-images.jianshu.io/upload_images/599584-682a3aa05a20aad6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![看到结果，我们就很容易清楚的知道export与export default的区别与作用了，并且如何使用他们就变得很简单了](http://upload-images.jianshu.io/upload_images/599584-682a3aa05a20aad6.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
 
 如果大家还记得前面一篇文章里，我所讲的ES6解析结构的语法，那么对于如下的用法相信就不难理解。
 
@@ -218,8 +216,7 @@ console.log('zcar:', zcar);
 
 test，仍然表示为`export default`暴露的对象，而 `{ bar, zcar }`则表示利用解析结构的语法，从整个返回对象中去取得对应的接口。输出结果也就很清晰了。
 
-
-![result](http://upload-images.jianshu.io/upload_images/599584-5f1b2cb69be63173.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![result](http://upload-images.jianshu.io/upload_images/599584-5f1b2cb69be63173.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
 
 这种方式还是比较常见，比如我们在使用react时，常常这样使用：
 
@@ -235,15 +232,19 @@ import React, { Component } from 'react'
 // 安装jquery
 > npm install jquery
 ```
+
 然后在其他模块中就可以直接引入
 
 ```javascript
 import $ from 'jquery'
 ```
 
-这样，我们可以和往常一样使用jquery。
+这样，我们可以和往常一样使用jquery。  
 通过这样方式，我们还可以扩展更多的库，这就使得我们这个开发环境不仅仅能够用于react的开发，怎么用，完全取决与你自己。
 
 OK，ES6 模块的基础语法大概就这些吧，他告诉了我们在ES6中，一个模块应该如何对外暴露接口与如何引入其他模块暴露的接口，这个知识点在实际开发中非常常用，因此虽然简单，但是不得不掌握，这也是大家进一步学习react或者vue的基础，主要的难点大概在于本地开发环境的折腾，如果你是初次折腾这些，可能会遇到一些小问题，所以一定要有一点耐心。
 
 > 通常来说，一个知识点，在完全理解之前还是有点难度的，但是理解之后就变得非常简单，所以如果你在学习这个知识点时感觉有点困难，也不要过于担心，多多动手尝试，并在实践中运用起来，相信很快就能掌握。
+
+
+
