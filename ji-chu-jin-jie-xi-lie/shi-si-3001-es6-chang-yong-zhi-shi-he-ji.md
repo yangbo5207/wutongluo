@@ -1,5 +1,3 @@
-![ES6基础智商划重点](http://upload-images.jianshu.io/upload_images/599584-8383c804f0a913d6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
 
 在实际开发中，ES6已经非常普及了。掌握ES6的知识变成了一种必须。尽管我们在使用时仍然需要经过babel编译。
 
@@ -561,9 +559,3 @@ http://www.jianshu.com/p/fe5f173276bd
 因为学习模块需要一个学习场景，因此我决定在下一篇文章中结合`create-react-app`一起分享给大家。
 
 深入学习ES6推荐 http://es6.ruanyifeng.com/
-
-[前端基础进阶系列目录](http://www.jianshu.com/p/cd3fee40ef59)
-
-前端基础进阶系列我会持续更新，欢迎大家来简书关注我。也欢迎大家关注我的公众号(见个人简介)，新的文章在简书更新了我会通过公众号通知大家。
-
-> 我已委托“维权骑士”（rightknights.com）为我的文章进行维权行动。未经允许，请勿转载，谢谢合作。
