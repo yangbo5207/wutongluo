@@ -15,4 +15,5 @@
   * [十一、浅析jQuery](ji-chu-jin-jie-xi-lie/shi-yi-3001-qian-xi-jquery.md)
   * [十二、事件循环机制](ji-chu-jin-jie-xi-lie/shi-er-3001-shi-jian-xun-huan-ji-zhi.md)
   * [十三、Promise](ji-chu-jin-jie-xi-lie/shi-san-3001-promise.md)
+  * [十四、ES6常用知识合集](ji-chu-jin-jie-xi-lie/shi-si-3001-es6-chang-yong-zhi-shi-he-ji.md)
 
