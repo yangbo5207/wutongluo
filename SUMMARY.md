@@ -7,4 +7,5 @@
   * [三、变量对象](ji-chu-jin-jie-xi-lie/san-3001-bian-liang-dui-xiang.md)
   * [四、作用域链与闭包](ji-chu-jin-jie-xi-lie/si-3001-zuo-yong-yu-lian-yu-bi-bao.md)
   * 五、this
+  * [六、在chrome中观察函数调用栈、作用域链、闭包](ji-chu-jin-jie-xi-lie/liu-3001-zai-chrome-zhong-guan-cha-han-shu-diao-yong-zhan-3001-zuo-yong-yu-lian-3001-bi-bao.md)
 
