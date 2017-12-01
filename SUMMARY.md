@@ -19,4 +19,5 @@
   * [十五、详解ES6 Modules](ji-chu-jin-jie-xi-lie/shi-wu-3001-xiang-jie-es6-modules.md)
   * [附件1：setTimeout与闭包](ji-chu-jin-jie-xi-lie/fu-jian-1-settimeout-yu-bi-bao.md)
   * [附件2：async/await](ji-chu-jin-jie-xi-lie/fu-jian-2-async-await.md)
+* [友情赞助](you-qing-zan-zhu.md)
 
